@@ -32,7 +32,7 @@ const Sections = () => {
                         </p>
                         <Button danger size={isBigger ? "large": "middle"} className={`rounded-full mx-auto block mt-4 uppercase md:mx-0 2xl:text-xl`} > Click here </Button>
                     </div>
-                    <div className={`h-36 w-72 bg-gray-500 mx-auto -skew-y-12 rotate-12 ${isBigger && "h-56 w-[600px]"}`}></div>
+                    <div className={`h-36 w-72 bg-gray-500 mx-auto -skew-y-12 rotate-12 ${isBigger && "h-80 w-[750px]"}`}></div>
                 </div>
 
                 <div className={`flex flex-col-reverse gap-4 mt-8 md:flex-row`}>
@@ -44,7 +44,7 @@ const Sections = () => {
                         </p>
                         <Button onClick={() => navigate('/about')} danger size={isBigger ? "large": "middle"} className={`rounded-full mx-auto block mt-4 uppercase md:mx-0 2xl:text-xl`} > Click here </Button>
                     </div>
-                    <div className={`h-36 w-72 bg-gray-500 mx-auto -skew-y-12 rotate-12 ${isBigger && "h-56 w-[600px]"}`}>
+                    <div className={`h-36 w-72 bg-gray-500 mx-auto -skew-y-12 rotate-12 ${isBigger && "h-80 w-[750px]"}`}>
                     </div>
                 </div>
 
@@ -56,7 +56,7 @@ const Sections = () => {
                         </p>
                         <Button danger size={isBigger ? "large": "middle"} className={`rounded-full mx-auto block mt-4 uppercase md:mx-0 2xl:text-xl`} > Click here </Button>
                     </div>
-                    <div className={`h-36 w-72 bg-gray-500 mx-auto -skew-y-12 rotate-12 ${isBigger && "h-56 w-[600px]"}`}>
+                    <div className={`h-36 w-72 bg-gray-500 mx-auto -skew-y-12 rotate-12 ${isBigger && "h-80 w-[750px]"}`}>
                     </div>
                 </div>
 

@@ -2,12 +2,11 @@ import { Carousel } from "antd";
 
 export const HomeCarousel = () => {
         return (
-            <Carousel dots={false}>
-                <div> <img src="https://cdn.motor1.com/images/mgl/kprv4/s1/ssangyong-j100.jpg" alt="ssangyong" className="xl:h-[55vh] w-full object-cover" /></div>
+            <Carousel dots={true} dotPosition="top" autoplay arrows lazyLoad="anticipated">
+                <div> <img src="https://puntokoreano.com/images/examples/example_carrousel_3.jpg" alt="ssangyong" className="xl:h-[80vh] w-full object-cover" /></div>
+                <div> <img src="https://puntokoreano.com/images/examples/example_carrousel_1.jpg" alt="ssangyong" className="xl:h-[80vh] w-full object-cover" /></div>
+                <div> <img src="https://puntokoreano.com/images/examples/example_carrousel_2.jpg" alt="ssangyong" className="xl:h-[80vh] w-full object-cover" /></div>
             </Carousel>
-            // <div>
-            //     <img src="https://cdn.motor1.com/images/mgl/kprv4/s1/ssangyong-j100.jpg" alt="ssangyong" className="xl:h-[55vh] w-full object-cover" />
-            // </div>
         )
 }
 export default HomeCarousel;

@@ -6,7 +6,6 @@ import ssangyong from "../../assets/ssangyong.png";
 import Services from "./components/Services.component";
 import { useMediaQuery } from "react-responsive";
 import Sections from "./components/Sections.component";
-import Footer from "./components/Footer.component";
 
 export const Home = () => {
     const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
@@ -15,7 +14,7 @@ export const Home = () => {
         <div>
             <HomeCarousel />
 
-            <div className={`z-10 relative justify-around bg-[#2F2482] text-white flex flex-col items-center py-8 md:flex-row md:px-4 md:py-6 md:-mt-10 md:mx-4 md:rounded-md lg:-mt-24 lg:mx-10`}>
+            <div className={`z-0 relative justify-around bg-[#2F2482] text-white flex flex-col items-center py-8 md:flex-row md:px-4 md:py-6 md:-mt-10 md:mx-4 md:rounded-md lg:-mt-24 lg:mx-10`}>
                 <div className={`md:flex md:items-center md:gap-2 lg:gap-4 xl:gap-8`}>
                     <img src={korea} alt="korea" width={ isMobile ? 90 : isTablet ? 90 : 120 } />
                     <Divider type={ isMobile ? "horizontal" : "vertical" } className={`${ isMobile ? "" : "h-16 border-2"} border-white`} />
