@@ -7,6 +7,8 @@ import { useMediaQuery } from "react-responsive";
 import About from "../pages/about/About.page";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import Store from "../pages/store/store.page";
+import FilterStore from "../pages/store/components/Filter.component";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -15,6 +17,9 @@ const router = createBrowserRouter(
             <Route element={<PublicRoutes />} >
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
+                {/* store */}
+                <Route path="/store/search" element={<FilterStore />} />
+                <Route path="/store" element={<Store />} />
             </Route>
 
             {/* Private routes */}
@@ -41,7 +46,9 @@ const Routes = () => {
                 components: {
                     Button: {
                         colorPrimaryHover: `#E2000E`,
-                        colorPrimaryActive: `#E2000E`
+                        colorPrimaryActive: `#E2000E`,
+                        colorBgTextHover: `#FFFFF`,
+                        colorText: `#FFEC0C`,
                     }
                 }
             }}>

@@ -23,7 +23,7 @@ export const MainLayout = ({ children }: Props) => {
         },
         {
             key: 2,
-            label: (<Link to={"#"}>Tienda</Link>)
+            label: (<Link to={"/store/search"}>Tienda</Link>)
         },
         {
             key: 3,
