@@ -26,14 +26,13 @@ const GroupComponent = () => {
 
     return (
         <div className="w-full">
-            <div className="bg-[#001529] flex overflow-x-auto h-full px-2">
+            <div className="bg-[#001529] flex overflow-x-auto h-full px-2 2xl:justify-center">
                 {
                     data?.groups?.map((group: group) => {
                         return <SelectDropdown group={group} />
                     })
                 }
             </div>
-            <div className="h-screen"></div>
         </div>
     )
 };

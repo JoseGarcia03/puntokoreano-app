@@ -6,9 +6,13 @@ import { ConfigProvider } from "antd";
 import { useMediaQuery } from "react-responsive";
 import About from "../pages/about/About.page";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+// import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Store from "../pages/store/store.page";
 import FilterStore from "../pages/store/components/Filter.component";
+import ProductDetail from "../pages/product/ProductDetail";
+import Wishlist from "../pages/wishlist/Wishlist.page";
+import Checkout from "../components/checkout/Checkout.component";
+import ThanksOrder from "../components/orders/Thanks.component";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -20,6 +24,10 @@ const router = createBrowserRouter(
                 {/* store */}
                 <Route path="/store/search" element={<FilterStore />} />
                 <Route path="/store" element={<Store />} />
+                <Route path="/store/product/:id" element={<ProductDetail />} />
+                <Route path="/store/wishlist" element={<Wishlist />} />
+                <Route path="/store/checkout" element={<Checkout />} />
+                <Route path="/store/finish-order" element={<ThanksOrder />} />
             </Route>
 
             {/* Private routes */}
@@ -55,7 +63,7 @@ const Routes = () => {
             <QueryClientProvider client={queryClient}>
                 <RouterProvider router={router} />
 
-                <ReactQueryDevtools initialIsOpen={false} />
+                {/* <ReactQueryDevtools initialIsOpen={false} /> */}
             </QueryClientProvider>
         </ConfigProvider>
     )

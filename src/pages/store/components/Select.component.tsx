@@ -38,7 +38,7 @@ const SelectDropdown = ({ group }: Props) => {
             {
                 isOpen && (
                     <div
-                        className="absolute shadow-md left-0 right-0 h-[58vh] flex flex-col flex-wrap items-start gap-1 p-5 overflow-x-auto"
+                        className="absolute z-10 shadow-md left-0 right-0 h-[58vh] flex flex-col flex-wrap items-start gap-1 p-5 overflow-x-auto bg-white"
                     >
                         {
                             group?.subgroups?.map((subgroup, idx) => {
