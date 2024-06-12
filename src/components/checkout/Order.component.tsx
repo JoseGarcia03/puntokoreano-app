@@ -41,31 +41,6 @@ const Orders = () => {
             quantity: 3,
             price: 10000
         },
-        // {
-        //     name: "Enginer and Drivetrain",
-        //     image: "https://risingtheme.com/html/demo-partsix/partsix/assets/img/product/small-product/product5.webp",
-        //     quantity: 1,
-        //     price: 300000
-        // },
-        // {
-        //     name: "Enginer and Drivetrain",
-        //     image: "https://risingtheme.com/html/demo-partsix/partsix/assets/img/product/small-product/product6.webp",
-        //     quantity: 1,
-        //     price: 55000
-        // },
-        // {
-        //     name: "Enginer and Drivetrain",
-        //     image: "https://risingtheme.com/html/demo-partsix/partsix/assets/img/product/small-product/product7.webp",
-        //     quantity: 4,
-        //     price: 25250
-        // },
-        // {
-        //     name: "Enginer and Drivetrain",
-        //     image: "https://risingtheme.com/html/demo-partsix/partsix/assets/img/product/small-product/product8.webp",
-        //     quantity: 6,
-        //     price: 89000
-        // },
-
     ]
 
     return (

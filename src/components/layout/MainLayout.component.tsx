@@ -36,7 +36,7 @@ export const MainLayout = ({ children }: Props) => {
         },
         {
             key: 3,
-            label: (<Link to={"#"}>Blog</Link>)
+            label: (<Link to={"/blog"}>Blog</Link>)
         },
         {
             key: 4,

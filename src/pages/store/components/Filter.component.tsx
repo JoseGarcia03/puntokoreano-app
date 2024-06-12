@@ -1,5 +1,6 @@
 import { Button, Form, Select } from "antd";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 type FieldType = {
     brand: string;
@@ -11,6 +12,8 @@ type FieldType = {
 }
 
 const FilterStore = () => {
+    const navigate = useNavigate();
+
     const brands = [{value: "ssangyong", label: "SSANGYONG"}];
     const models = Array.from({ length: 2025 - 2003 + 1 }, (_, i) => {
         const year = 2003 + i;
@@ -822,7 +825,7 @@ const FilterStore = () => {
                     >
                         <Select value={line} options={lines?.[brand]?.[model]?.[family]?.[transmission]?.[fuel]} onChange={setLine} />
                     </Form.Item>
-                    <Button type="primary" className="mx-auto block">
+                    <Button type="primary" className="mx-auto block" onClick={() => navigate('/store')}>
                         Buscar
                     </Button>
                 </Form>

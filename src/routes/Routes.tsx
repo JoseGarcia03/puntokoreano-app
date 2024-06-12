@@ -13,6 +13,10 @@ import ProductDetail from "../pages/product/ProductDetail";
 import Wishlist from "../pages/wishlist/Wishlist.page";
 import Checkout from "../components/checkout/Checkout.component";
 import ThanksOrder from "../components/orders/Thanks.component";
+import Blog from "../pages/blog/Blog.page";
+import VehiclesBrand from "../pages/blog/components/Vehicles.component";
+import Articules from "../pages/blog/components/Articules.component";
+import BlogPost from "../pages/blog/components/Post.component";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -28,6 +32,12 @@ const router = createBrowserRouter(
                 <Route path="/store/wishlist" element={<Wishlist />} />
                 <Route path="/store/checkout" element={<Checkout />} />
                 <Route path="/store/finish-order" element={<ThanksOrder />} />
+
+                {/* Blog */}
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:brand/vehicles" element={<VehiclesBrand />} />
+                <Route path="/blog/:brand/:vehicle/articles" element={<Articules />} />
+                <Route path="/blog/post/:id" element={<BlogPost />} />
             </Route>
 
             {/* Private routes */}

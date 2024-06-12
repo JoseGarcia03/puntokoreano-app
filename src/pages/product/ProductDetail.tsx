@@ -80,7 +80,7 @@ const ProductDetail = () => {
 
                     <Space className="flex flex-col justify-start items-start">
                         <p className="mt-2 font-bold text-base">Pago seguro garantizado</p>
-                        <Image src="https://risingtheme.com/html/demo-partsix/partsix/assets/img/other/safe-checkout.webp" />
+                        <Image preview={false} src="https://risingtheme.com/html/demo-partsix/partsix/assets/img/other/safe-checkout.webp" />
                     </Space>
 
                 </div>
