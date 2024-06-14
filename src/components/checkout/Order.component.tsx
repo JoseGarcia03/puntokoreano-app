@@ -1,4 +1,4 @@
-import { Badge, Image, Input } from "antd";
+import { Badge, Image } from "antd";
 import { useEffect, useState } from "react";
 
 const Orders = () => {
