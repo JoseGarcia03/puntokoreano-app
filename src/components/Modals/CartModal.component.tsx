@@ -94,7 +94,7 @@ const CartModal = ({ open, setOpen }: Props) => {
             {
                 valuesCart.map((value) => {
                     return (
-                        <section className="flex gap-4 border-b mb-4">
+                        <section key={value.name} className="flex gap-4 border-b mb-4">
                             <figure className="w-24 h-28">
                                 <Image
                                 style={{ objectFit: "contain", width: 96, height: 112 }}

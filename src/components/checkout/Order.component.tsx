@@ -6,7 +6,9 @@ const Orders = () => {
     const [ total, setTotal ] = useState<number>(0);
 
     const getTotalAndSubTotal = () => {
-        const total = valuesCart.reduce(( sum, item ) => sum + item.price, 0);
+        const total = valuesCart.reduce((sum, item) => {
+            return sum + (item.price * item.quantity);
+        }, 0);
 
         setSubTotal(total);
         setTotal(total);
@@ -44,12 +46,12 @@ const Orders = () => {
     ]
 
     return (
-        <section className="bg-[#FFFFFF] rounded-lg mt-4 px-4 border shadow-xl pb-8 md:h-fit md:w-fit md:sticky">
+        <section className="bg-[#FFFFFF] rounded-lg mt-4 px-4 border shadow-xl pb-5 md:h-fit md:w-fit md:sticky lg:w-2/5 lg:mt-[75px]">
             <h3 className="text-xl text-center py-4 font-bold">Su orden</h3>
             {
-                valuesCart.map((cart) => {
+                valuesCart.map((cart, idx) => {
                     return (
-                        <div className="flex justify-center gap-4 border-b mt-5 sm:gap-10 sm:justify-start">
+                        <div key={`${cart.name}-${idx}`} className="flex justify-center gap-4 border-b mt-5 sm:gap-10 sm:justify-start">
                             <figure>
                                 <Badge count={cart.quantity}>
                                     <Image preview={false} src={cart.image} />
@@ -63,48 +65,17 @@ const Orders = () => {
                     )
                 })
             }
-
-            <div className="flex gap-4 mt-5 border-b pb-4 sm:w-1/2 lg:w-full">
-                <Input placeholder="Cupón" type="text" />
-                <button className="bg-[#E2060F] text-white px-4 rounded-lg text-base">
-                    Aplicar
-                </button>
-            </div>
-
-            <div className="py-4 text-base border-b">
+            <div className="pt-4 text-base border-b">
                 <div className="flex justify-between pb-2">
                     <p className="text-gray-400">Subtotal</p>
                     <p>$ { subTotal.toLocaleString('es-CO') } COP</p>
                 </div>
-                <div className="flex justify-between text-gray-400">
-                    <p>Envio</p>
-                    <p>Se calcula en el proximo paso</p>
-                </div>
             </div>
 
-            <div className="py-4 text-base flex justify-between">
+            <div className="pt-4 text-base flex justify-between">
                 <p>Total</p>
                 <p>$ { total.toLocaleString('es-CO') } COP</p>
             </div>
-
-            <div>
-                <h3 className="text-xl font-bold">Pago</h3>
-                <div className="flex text-base gap-2 mt-4 overflow-x-auto">
-                    <button className="text-nowrap border border-[#333] px-2 rounded-full hover:bg-[#333] hover:text-white transition-all duration-300">
-                        Tarjeta de crédito
-                    </button>
-                    <button className="text-nowrap  border border-[#333] px-2 rounded-full hover:bg-[#333] hover:text-white transition-all duration-300">
-                        Transferencia Bancaria
-                    </button>
-                    <button className="text-nowrap  border border-[#333] px-2 rounded-full hover:bg-[#333] hover:text-white transition-all duration-300">
-                        Paypal
-                    </button>
-                </div>
-            </div>
-
-            <button className="bg-[#E2060F] text-white block w-full py-1 text-base mt-6 rounded-full hover:bg-[#333] hover:text-white ">
-                Comprar ahora
-            </button>
         </section>
     )
 };

@@ -52,6 +52,8 @@ const router = createBrowserRouter(
 )
 
 const Routes = () => {
+    const is576 = useMediaQuery({ query: '(min-width: 576px)' });
+    const isXl = useMediaQuery({ query: '(min-width: 1280px)' });
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1023px)' }); 
     const queryClient = new QueryClient()
 
@@ -59,7 +61,8 @@ const Routes = () => {
         <ConfigProvider theme={{
                 token: {
                     fontFamily: "Cabin Condensed, sans-serif",
-                    fontSize: isTabletOrMobile ? 14 : 18 
+                    fontSize: isTabletOrMobile ? 14 : 18,
+
                 },
                 components: {
                     Button: {
@@ -67,6 +70,12 @@ const Routes = () => {
                         colorPrimaryActive: `#E2000E`,
                         colorBgTextHover: `#FFFFF`,
                         colorText: `#FFEC0C`,
+                    },
+                    Steps: {
+                        customIconTop: isXl ? -4 : is576 ? -2 : .5,
+                    },
+                    Form: {
+                        fontSize: 16
                     }
                 }
             }}>
