@@ -175,7 +175,7 @@ const FilterStore = () => {
     const transmissions: Record<string, any> = {
         ssangyong: {
             "2003": {
-                "korando": [{ "label": "MEC 4x4", "value": "mec4x4" }],
+                "korando": [{ "label": "MEC 4x4", "value": "mec_4x4" }],
                 "rexton": [
                     { "label": "MEC 4x4", "value": "mec_4x4" },
                     { "label": "AUT 4X4", "value": "aut_4x4" },
@@ -683,15 +683,15 @@ const FilterStore = () => {
         "ssangyong": {
             "2003": {
                 "korando": {
-                    "mec4x4": {
+                    "mec_4x4": {
                         "diesel": [{ label: "KORANDO 4WD D29", value: "korando4wdd29"}]
                     }
                 },
                 "rexton": {
-                    "mec4x4": {
+                    "mec_4x4": {
                         "diesel": [{ label: "REXTON 4WD D29", value: "rexton4wdd29"}]
                     },
-                    "aut4x4": {
+                    "aut_4x4": {
                         "diesel": [{ label: "REXTON 4WD D29", value: "rexton4wdd29"}]
                     }
                 }
@@ -742,7 +742,6 @@ const FilterStore = () => {
     };
 
     const handleFamilyChange = (value: string) => {
-        console.log(value, 'family')
         setFamily(value);
         setTransmission("");
         setFuel("");
@@ -750,14 +749,12 @@ const FilterStore = () => {
     };
 
     const handleTransmissionChange = (value: string) => {
-        console.log(value, 'transmission')
         setTransmission(value);
         setFuel("");
         setLine("");
     };
 
     const handleFuelChange = (value: string) => {
-        console.log(value, 'fuel')
         setFuel(value);
         setLine("");
     };

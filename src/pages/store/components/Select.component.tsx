@@ -45,7 +45,7 @@ const SelectDropdown = ({ group }: Props) => {
                                 return (
                                     <span
                                         key={`${subgroup?.name}-${idx}`}
-                                        className="w-[170px] hover:text-[#FEEB0B]"
+                                        className="w-[170px] hover:text-[#E2060F] cursor-pointer"
                                     >
                                         { subgroup?.name }
                                     </span>

@@ -49,9 +49,9 @@ export const MainLayout = ({ children }: Props) => {
             <Header
                 className={`flex justify-between items-center ${(isMobile || isTablet) && "px-5"} sticky z-20 top-0`} 
             >
-                <Flex align="center" gap={10} className="w-fit text-white flex-1 cursor-pointer" onClick={() => navigate('/')} >
-                    <img src={Logo} width={50} />
-                    <h2 className="text-xl md:text-2xl w-36" >Punto Koreano</h2>
+                <Flex align="center" gap={10} className="w-fit text-white flex-1">
+                    <img src={Logo} width={50} onClick={() => navigate('/')} className="cursor-pointer" />
+                    <h2 className="text-xl md:text-2xl w-36 cursor-pointer" onClick={() => navigate('/')}>Punto Koreano</h2>
                 </Flex>
                 <Flex align="center" justify={"flex-end"}>
                     {!location.pathname.includes('store') && <Menu
