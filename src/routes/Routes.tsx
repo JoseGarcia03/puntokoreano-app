@@ -10,13 +10,13 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Store from "../pages/store/store.page";
 import FilterStore from "../pages/store/components/Filter.component";
 import ProductDetail from "../pages/product/ProductDetail";
-import Wishlist from "../pages/wishlist/Wishlist.page";
 import Checkout from "../components/checkout/Checkout.component";
 import ThanksOrder from "../components/orders/Thanks.component";
 import Blog from "../pages/blog/Blog.page";
 import VehiclesBrand from "../pages/blog/components/Vehicles.component";
 import Articules from "../pages/blog/components/Articules.component";
 import BlogPost from "../pages/blog/components/Post.component";
+import Cart from "../pages/cart/Cart.page";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -29,7 +29,7 @@ const router = createBrowserRouter(
                 <Route path="/store/search" element={<FilterStore />} />
                 <Route path="/store" element={<Store />} />
                 <Route path="/store/product/:id" element={<ProductDetail />} />
-                <Route path="/store/wishlist" element={<Wishlist />} />
+                <Route path="/store/cart" element={<Cart />} />
                 <Route path="/store/checkout" element={<Checkout />} />
                 <Route path="/store/finish-order" element={<ThanksOrder />} />
 

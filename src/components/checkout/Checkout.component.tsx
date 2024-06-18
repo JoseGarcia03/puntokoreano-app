@@ -10,7 +10,7 @@ import Billing from "./Billing.component";
 
 const Checkout = () => {
     const is576 = useMediaQuery({ query: '(min-width: 576px)' });
-    const [ current, setCurrent ] = useState<number>(2);
+    const [ current, setCurrent ] = useState<number>(0);
     const [ status, setStatus ] = useState<StepsProps["status"]>("process");
 
     const steps: StepProps[] = [

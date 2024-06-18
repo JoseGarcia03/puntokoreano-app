@@ -90,7 +90,7 @@ const CartModal = ({ open, setOpen }: Props) => {
     ]
 
     return (
-        <Drawer width={md ? 400 : 320 } title="Carrito de compras" open={open} onClose={handleClose}>
+        <Drawer destroyOnClose width={md ? 400 : 320 } title="Carrito de compras" open={open} onClose={handleClose}>
             {
                 valuesCart.map((value) => {
                     return (
@@ -126,7 +126,7 @@ const CartModal = ({ open, setOpen }: Props) => {
             }
             <section>
                 <div className="flex justify-between mb-4">
-                    <p className="font-medium text-base">Sub Total:</p>
+                    <p className="font-medium text-base">SubTotal:</p>
                     <p className="font-medium text-base">$ { subTotal.toLocaleString('es-CO') } COP</p>
                 </div>
                 <div className="flex justify-between">
@@ -137,6 +137,10 @@ const CartModal = ({ open, setOpen }: Props) => {
 
             <section className="flex gap-4 mt-4">
                 <button
+                onClick={() => {
+                    setOpen(false);
+                    navigate('/store/cart')
+                }}
                 className="bg-[#E2060F] hover:bg-[#001529] transition-[background-color] duration-300 text-white w-full py-2 rounded-full font-semibold text-base mt-2"
                 >
                     Ver Carrito
