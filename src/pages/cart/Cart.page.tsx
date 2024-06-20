@@ -1,4 +1,4 @@
-import { faArrowLeft, faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Image, Space, Table } from "antd";
 import { useEffect, useState } from "react";

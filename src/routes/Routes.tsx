@@ -17,6 +17,7 @@ import VehiclesBrand from "../pages/blog/components/Vehicles.component";
 import Articules from "../pages/blog/components/Articules.component";
 import BlogPost from "../pages/blog/components/Post.component";
 import Cart from "../pages/cart/Cart.page";
+import VirtualCard from "../components/cards/VirtualCard.component";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -38,6 +39,10 @@ const router = createBrowserRouter(
                 <Route path="/blog/:brand/vehicles" element={<VehiclesBrand />} />
                 <Route path="/blog/:brand/:vehicle/articles" element={<Articules />} />
                 <Route path="/blog/post/:id" element={<BlogPost />} />
+
+
+
+                <Route path="/cards" element={<VirtualCard />} />
             </Route>
 
             {/* Private routes */}
@@ -60,8 +65,8 @@ const Routes = () => {
     return (
         <ConfigProvider theme={{
                 token: {
-                    fontFamily: "Cabin Condensed, sans-serif",
-                    fontSize: isTabletOrMobile ? 14 : 18,
+                    fontFamily: "Exo, sans-serif",
+                    fontSize: isTabletOrMobile ? 14 : 16,
 
                 },
                 components: {
@@ -76,6 +81,14 @@ const Routes = () => {
                     },
                     Form: {
                         fontSize: 16
+                    },
+                    Menu: {
+                        itemColor: '#FFFFF',
+                        horizontalItemSelectedBg: '#1677ff',
+                        horizontalItemHoverBg: '#1677ff',
+                        horizontalItemSelectedColor: '#FFFFFF',
+                        horizontalItemHoverColor: '#FFFFFF',
+                        itemSelectedColor: '#FFFFFF'
                     }
                 }
             }}>

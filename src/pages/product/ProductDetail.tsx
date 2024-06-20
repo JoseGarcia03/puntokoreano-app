@@ -8,6 +8,7 @@ import DescriptionProduct from "./components/Description.component";
 import ReviewsProduct from "./components/Reviews.component";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
+import SectionProducts from "../store/components/SectionProducts.component";
 
 const ProductDetail = () => {
     const navigate = useNavigate();
@@ -43,7 +44,7 @@ const ProductDetail = () => {
 
     return (
         <div className="mx-5 mb-10 lg:mx-[50px]">
-            <div className="flex items-center gap-2 mb-4 w-fit mt-5 cursor-pointer" onClick={() => navigate(-1)}>
+            <div className="flex items-center gap-2 mb-4 w-fit mt-5 cursor-pointer" onClick={() => navigate('/store')}>
                 <FontAwesomeIcon icon={faArrowLeft} className="text-base" />
                 <p className="text-lg font-semibold">Tienda</p>
             </div>
@@ -87,6 +88,9 @@ const ProductDetail = () => {
             </section>
             <div className="w-full 2xl:w-[1280px] 2xl:mx-auto">
                 <Tabs defaultActiveKey="1" items={tabs} />
+            </div>
+            <div>
+                <SectionProducts inline />
             </div>
         </div>
     )

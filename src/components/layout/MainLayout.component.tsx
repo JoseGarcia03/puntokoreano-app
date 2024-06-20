@@ -51,17 +51,16 @@ export const MainLayout = ({ children }: Props) => {
         <Layout>
              <ScrollRestoration />
             <Header
-                className={`flex justify-between items-center ${(isMobile || isTablet) && "px-5"} sticky z-20 top-0`} 
+                className={`flex justify-between items-center ${(isMobile || isTablet) && "px-5"} sticky z-20 top-0 bg-primary`} 
             >
-                <Flex align="center" gap={10} className="w-fit text-white flex-1">
+                <Flex align="center" gap={10} className="w-fit text-white flex-1 hover:text-[#FFEC0C] transition-[color] duration-300">
                     <img src={Logo} width={50} onClick={() => navigate('/')} className="cursor-pointer" />
-                    <h2 className="text-xl md:text-2xl w-36 cursor-pointer" onClick={() => navigate('/')}>Punto Koreano</h2>
+                    <h2 className="text-xl md:text-2xl w-36 md:w-48 cursor-pointer font-[Karate]" onClick={() => navigate('/')}>Punto Koreano</h2>
                 </Flex>
                 <Flex align="center" justify={"flex-end"}>
                     {!location.pathname.includes('store') && <Menu
                     defaultSelectedKeys={['1']}
-                    className={`w-16 sm:w-48 md:w-72 lg:w-80`}
-                    theme="dark"
+                    className={`w-16 sm:w-48 md:w-72 lg:w-80 bg-primary text-white`}
                     mode="horizontal"
                     items={items}
                     overflowedIndicator={<FontAwesomeIcon icon={faBars} />}

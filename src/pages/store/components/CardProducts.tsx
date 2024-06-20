@@ -1,15 +1,38 @@
 import { useNavigate } from "react-router-dom";
 import CountReview from "./CountReview.component";
+import Slider from "react-slick";
 
 const CardProducts = () => {
     const navigate = useNavigate();
 
+    const settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        variableWidth: true,
+        arrows: false,
+    }
+
     return (
-        <div className="transition duration-500 w-80 border rounded-lg relative cursor-pointer hover:border-[#E2060F] sm:w-64 xl:w-80">
+        <div className="transition duration-500 w-80 border rounded-lg relative cursor-pointer hover:border-[#E2060F sm:w-64 xl:w-80 ">
             <div onClick={() => navigate('/store/product/1')}>
                 {/* size of image is w-320px and h-320px smartphones */}
-                <div className="bg-[#E2060F] absolute py-3.5 px-3 rounded-full text-white right-4 top-4"> 20% </div>
-                <img src="https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/6c096b2dda96843a74d6522c7278c799.jpg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp" alt="" className="rounded-lg w-full h-80 sm:w-64 sm:h-auto xl:w-80" />
+                <div className="bg-[#E2060F] absolute py-3.5 px-3 rounded-full text-white right-4 top-4 z-1"> 20% </div>
+                <div className="slider-container h-80">
+                    <Slider {...settings}>
+                        <div style={{ height: 100 }}>
+                            <img src="https://risingtheme.com/html/demo-partsix/partsix/assets/img/product/main-product/product1.webp" alt="" className="rounded-lg w-full h-80 sm:w-64 sm:h-auto xl:w-80 object-scale-down" />
+                        </div>
+                        <div>
+                            <img src="https://risingtheme.com/html/demo-partsix/partsix/assets/img/product/main-product/product2.webp" alt="" className="rounded-lg w-full h-80 sm:w-64 sm:h-auto xl:w-80 object-scale-down" />
+                        </div>
+                        <div>
+                            <img src="https://risingtheme.com/html/demo-partsix/partsix/assets/img/product/main-product/product3.webp" alt="" className="rounded-lg w-full h-80 sm:w-64 sm:h-auto xl:w-80 object-scale-down" />
+                        </div>
+                    </Slider>
+                </div>
             </div>
             <div className="px-4" onClick={() => navigate('/store/product/1')}>
                 <CountReview />

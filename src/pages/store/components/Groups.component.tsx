@@ -25,7 +25,7 @@ const GroupComponent = () => {
     });
 
     return (
-        <div className="w-full">
+        <div className="w-full z-20">
             <div className="bg-[#001529] flex overflow-x-auto h-fit px-2 2xl:justify-center">
                 {
                     data?.groups?.map((group: group) => {
