@@ -6,8 +6,25 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        secondary: '#FFEC0C',
+        secondary_1: '#2F0C79',
+        secondary_2: '#A033CD'
+      },
+      fontFamily: {
+        karate: 'Karate',
+        glegoo: 'Glegoo',
+        exo: 'Exo',
+        noto_serif: 'Noto Serif',
+        lastica: 'Lastica'
+
+      },
       backgroundColor: {
-        primary: '#221E1F'
+        header: '#221E1F',
+        cardInfo: '#E6E6E6'
+      },
+      borderColor: {
+        card: '#E2060F'
       }
     },
   },

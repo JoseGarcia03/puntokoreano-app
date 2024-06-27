@@ -1,23 +1,24 @@
-import { faHeadset, faTag, faTruck, faWallet } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import './styles.css';
 
 const Services = () => {
 
     const services = [
-        { label: "Multiples medios de pago", icon: faWallet },
-        { label: "Despacho a nivel nacional", icon: faTruck },
-        { label: "Servicio técnico especializado", icon: faHeadset },
-        { label: "Mejores precios del mercado", icon: faTag },
+        { label: "Multiples medios de pago", icon: "https://puntokoreano.com/images/icons/billetera.png" },
+        { label: "Despacho a nivel nacional", icon: "https://puntokoreano.com/images/icons/delivery.png" },
+        { label: "Servicio técnico especializado", icon: "https://puntokoreano.com/images/icons/connection.png" },
+        { label: "Mejores precios del mercado", icon: "https://puntokoreano.com/images/icons/pin.png" },
     ]
 
     return (
-        <div className="bg-gradient-to-t from-indigo-300 flex flex-col gap-8 py-16 md:flex-row md:px-4 lg:px-8 xl:justify-around 2xl:pb-28">
-            { services.map( (service, key) => (
-                <div key={key} className="flex flex-col gap-2">
-                    <FontAwesomeIcon icon={service.icon} className="text-4xl" color="#316BB4" />
-                    <p className="text-2xl text-center italic">{ service.label }</p>
-                </div> 
-            ))}
+        <div className="container-services"> 
+            <div className="container-service">
+                { services.map( (service, idx) => (
+                    <figure key={idx} className="service">
+                        <img src={ service.icon } alt={ service.label } />
+                        <figcaption>{ service.label }</figcaption>
+                    </figure> 
+                ))}
+            </div>
         </div>
     )
 }

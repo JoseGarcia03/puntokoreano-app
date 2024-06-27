@@ -2,7 +2,7 @@ import { Avatar, Flex, Layout, Menu } from "antd";
 import Logo from "../../assets/logo-512x512.png";
 import { Content, Header } from "antd/es/layout/layout";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faCartShopping, faHeart, faSearch, faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faCartShopping, faHeart, faSearch, faUser, faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import { useMediaQuery } from "react-responsive";
 import { Link, ScrollRestoration, useLocation, useNavigate } from "react-router-dom";
 import Footer from "../../pages/home/components/Footer.component";
@@ -10,6 +10,8 @@ import { useState } from "react";
 import CartModal from "../Modals/CartModal.component";
 import WhatsAppButton from "../buttons/Whatsapp.component";
 import WishlistModal from "../Modals/Wishlist.component";
+
+import './style.css';
 
 interface Props {
     children: React.ReactElement
@@ -50,48 +52,93 @@ export const MainLayout = ({ children }: Props) => {
     return (
         <Layout>
              <ScrollRestoration />
-            <Header
-                className={`flex justify-between items-center ${(isMobile || isTablet) && "px-5"} sticky z-20 top-0 bg-primary`} 
+             <Header
+            className="header"
             >
-                <Flex align="center" gap={10} className="w-fit text-white flex-1 hover:text-[#FFEC0C] transition-[color] duration-300">
-                    <img src={Logo} width={50} onClick={() => navigate('/')} className="cursor-pointer" />
-                    <h2 className="text-xl md:text-2xl w-36 md:w-48 cursor-pointer font-[Karate]" onClick={() => navigate('/')}>Punto Koreano</h2>
-                </Flex>
-                <Flex align="center" justify={"flex-end"}>
-                    {!location.pathname.includes('store') && <Menu
-                    defaultSelectedKeys={['1']}
-                    className={`w-16 sm:w-48 md:w-72 lg:w-80 bg-primary text-white`}
+                <div className="container-header">
+                    <figure
+                    className="figure-logo"
+                    >
+                        <img
+                        className="logo"
+                        src="https://puntokoreano.com/images/logos/logo_1.png"
+                        alt="Punto Koreano Logo"
+                        />
+                        <figcaption
+                        className="figcaption-logo"
+                        >
+                            Punto Koreano
+                        </figcaption>
+                    </figure>
+
+                    <Menu
+                    className="header-menu"
+                    theme="dark"
                     mode="horizontal"
                     items={items}
-                    overflowedIndicator={<FontAwesomeIcon icon={faBars} />}
-                    />}
-                    { (location.pathname.includes('store') && !location.pathname.includes('search')) &&
-                        <FontAwesomeIcon
-                        icon={faSearch}
-                        className="text-white text-xl p-2 cursor-pointer"
-                        /> 
-                    }
-                    { location.pathname.includes('store') &&
-                        <FontAwesomeIcon
-                        onClick={handleOpenWishModal}
-                        icon={faHeart}
-                        className="text-white text-xl p-2 cursor-pointer"
-                        />
-                    }
-                    { location.pathname.includes('store') &&
-                        <FontAwesomeIcon
-                        onClick={handleOpenCarModal}
-                        icon={faCartShopping}
-                        className="text-white text-xl p-2 cursor-pointer"
-                        />
-                    }
-                    <Avatar
+                    defaultSelectedKeys={['home']}
+                    overflowedIndicator={<FontAwesomeIcon icon={faBars} className="text-white" size="xl"/>}
+                    />
+
+                    {/* <Avatar
                     size="large"
                     icon={<FontAwesomeIcon icon={faUserCircle} />}
                     className="cursor-pointer"
-                    />
-                </Flex>
+                    /> */}
+
+                    <button className="user-btn">
+                        <FontAwesomeIcon
+                        className="text-inherit"
+                        icon={faUser}
+                        size="xl"
+                        />
+                    </button>
+                </div>
             </Header>
+            {/* <Header
+                className={`flex justify-between items-center sticky z-20 top-0 bg-primary`} 
+            >
+                <Flex className="max-w-[1280px] mx-auto w-full" >
+                    <Flex align="center" gap={10} className="w-fit text-white flex-1 hover:text-[#FFEC0C] transition-[color] duration-300">
+                        <img src={Logo} width={50} onClick={() => navigate('/')} className="cursor-pointer" />
+                        <h2 className="text-xl md:text-2xl w-36 md:w-48 cursor-pointer font-[Karate]" onClick={() => navigate('/')}>Punto Koreano</h2>
+                    </Flex>
+                    <Flex align="center" justify={"flex-end"}>
+                        {!location.pathname.includes('store') && <Menu
+                        defaultSelectedKeys={['1']}
+                        className={`w-16 sm:w-48 md:w-72 lg:w-80 bg-primary text-white`}
+                        mode="horizontal"
+                        items={items}
+                        overflowedIndicator={<FontAwesomeIcon icon={faBars} />}
+                        />}
+                        { (location.pathname.includes('store') && !location.pathname.includes('search')) &&
+                            <FontAwesomeIcon
+                            icon={faSearch}
+                            className="text-white text-xl p-2 cursor-pointer"
+                            /> 
+                        }
+                        { location.pathname.includes('store') &&
+                            <FontAwesomeIcon
+                            onClick={handleOpenWishModal}
+                            icon={faHeart}
+                            className="text-white text-xl p-2 cursor-pointer"
+                            />
+                        }
+                        { location.pathname.includes('store') &&
+                            <FontAwesomeIcon
+                            onClick={handleOpenCarModal}
+                            icon={faCartShopping}
+                            className="text-white text-xl p-2 cursor-pointer"
+                            />
+                        }
+                        <Avatar
+                        size="large"
+                        icon={<FontAwesomeIcon icon={faUserCircle} />}
+                        className="cursor-pointer"
+                        />
+                    </Flex>
+                </Flex>
+            </Header> */}
             <Content>
                 { children }
             </Content>

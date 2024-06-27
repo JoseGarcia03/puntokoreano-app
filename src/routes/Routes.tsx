@@ -1,4 +1,10 @@
-import { createBrowserRouter, createRoutesFromElements, Navigate, Route, RouterProvider } from "react-router-dom";
+import {
+    createBrowserRouter,
+    createRoutesFromElements,
+    Navigate,
+    Route,
+    RouterProvider,
+} from "react-router-dom";
 import PublicRoutes from "./PublicRoutes";
 import PrivateRoutes from "./PrivateRoutes";
 import Home from "../pages/home/Home.page";
@@ -6,7 +12,6 @@ import { ConfigProvider } from "antd";
 import { useMediaQuery } from "react-responsive";
 import About from "../pages/about/About.page";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-// import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Store from "../pages/store/store.page";
 import FilterStore from "../pages/store/components/Filter.component";
 import ProductDetail from "../pages/product/ProductDetail";
@@ -23,7 +28,7 @@ const router = createBrowserRouter(
     createRoutesFromElements(
         <>
             {/* Public routes */}
-            <Route element={<PublicRoutes />} >
+            <Route element={<PublicRoutes />}>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 {/* store */}
@@ -36,38 +41,40 @@ const router = createBrowserRouter(
 
                 {/* Blog */}
                 <Route path="/blog" element={<Blog />} />
-                <Route path="/blog/:brand/vehicles" element={<VehiclesBrand />} />
-                <Route path="/blog/:brand/:vehicle/articles" element={<Articules />} />
+                <Route
+                    path="/blog/:brand/vehicles"
+                    element={<VehiclesBrand />}
+                />
+                <Route
+                    path="/blog/:brand/:vehicle/articles"
+                    element={<Articules />}
+                />
                 <Route path="/blog/post/:id" element={<BlogPost />} />
-
-
 
                 <Route path="/cards" element={<VirtualCard />} />
             </Route>
 
             {/* Private routes */}
-            <Route element={<PrivateRoutes />} >
-
-            </Route>
+            <Route element={<PrivateRoutes />}></Route>
 
             {/* Redirect */}
             <Route path="*" element={<Navigate to="/" />} />
         </>
     )
-)
+);
 
 const Routes = () => {
-    const is576 = useMediaQuery({ query: '(min-width: 576px)' });
-    const isXl = useMediaQuery({ query: '(min-width: 1280px)' });
-    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1023px)' }); 
-    const queryClient = new QueryClient()
+    const is576 = useMediaQuery({ query: "(min-width: 576px)" });
+    const isXl = useMediaQuery({ query: "(min-width: 1280px)" });
+    const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1023px)" });
+    const queryClient = new QueryClient();
 
     return (
-        <ConfigProvider theme={{
+        <ConfigProvider
+            theme={{
                 token: {
                     fontFamily: "Exo, sans-serif",
                     fontSize: isTabletOrMobile ? 14 : 16,
-
                 },
                 components: {
                     Button: {
@@ -77,27 +84,26 @@ const Routes = () => {
                         colorText: `#FFEC0C`,
                     },
                     Steps: {
-                        customIconTop: isXl ? -4 : is576 ? -2 : .5,
+                        customIconTop: isXl ? -4 : is576 ? -2 : 0.5,
                     },
                     Form: {
-                        fontSize: 16
+                        fontSize: 16,
                     },
                     Menu: {
-                        itemColor: '#FFFFF',
-                        horizontalItemSelectedBg: '#1677ff',
-                        horizontalItemHoverBg: '#1677ff',
-                        horizontalItemSelectedColor: '#FFFFFF',
-                        horizontalItemHoverColor: '#FFFFFF',
-                        itemSelectedColor: '#FFFFFF'
-                    }
-                }
-            }}>
+                        itemColor: "#FFFFF",
+                        horizontalItemSelectedBg: "#1677ff",
+                        horizontalItemHoverBg: "#1677ff",
+                        horizontalItemSelectedColor: "#FFFFFF",
+                        horizontalItemHoverColor: "#FFFFFF",
+                        itemSelectedColor: "#FFFFFF",
+                    },
+                },
+            }}
+        >
             <QueryClientProvider client={queryClient}>
                 <RouterProvider router={router} />
-
-                {/* <ReactQueryDevtools initialIsOpen={false} /> */}
             </QueryClientProvider>
         </ConfigProvider>
-    )
-}
+    );
+};
 export default Routes;

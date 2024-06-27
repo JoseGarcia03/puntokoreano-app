@@ -1,5 +1,4 @@
 import { Image } from "antd";
-import Slider from "react-slick";
 
 const images = [
     "https://risingtheme.com/html/demo-partsix/partsix/assets/img/product/big-product/product1.webp",
@@ -30,7 +29,7 @@ const ImagesView = () => {
 
     return (
         <div className="slider-container sm:mx-auto lg:w-1/2 mb-3">
-            <Slider {...settings}>
+            {/* <Slider {...settings}>
                 {
                     images.map((src: string) => {
                         return (
@@ -40,7 +39,7 @@ const ImagesView = () => {
                         )
                     })
                 }
-            </Slider>
+            </Slider> */}
         </div>
     )
 }
