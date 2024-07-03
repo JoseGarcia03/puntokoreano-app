@@ -9,7 +9,8 @@ export default {
       colors: {
         secondary: '#FFEC0C',
         secondary_1: '#2F0C79',
-        secondary_2: '#A033CD'
+        secondary_2: '#A033CD',
+        secondary_3: '#E2000E'
       },
       fontFamily: {
         karate: 'Karate',

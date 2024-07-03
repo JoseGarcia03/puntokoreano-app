@@ -2,13 +2,14 @@ import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CardProducts from "./CardProducts";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useMediaQuery } from "react-responsive";
+import { Navigation } from "swiper/modules";
 
 interface Props {
     inline?: boolean;
 }
 
 import 'swiper/css';
-import { useMediaQuery } from "react-responsive";
 
 const SectionProducts = ({ inline }: Props) => {
     const sm = useMediaQuery({ query: '(min-width: 640px)' });
@@ -19,7 +20,7 @@ const SectionProducts = ({ inline }: Props) => {
     const xl3 = useMediaQuery({ query: '(min-width: 1800px)' });
 
     return (
-        <div className="mx-5 mb-10 lg:mx-12">
+        <div className="mx-5 mb-10 max-w-[1320px] lg:px-10 xl:mx-auto lg:mx-auto">
             <div className="flex items-center gap-2 mt-2 py-2 border-b border-b-[#e5e5e5] mb-5">
                 <FontAwesomeIcon icon={faCircle} className="text-[#E2060F] text-sm p-1 border rounded-full border-[#E2060F]" />
                 <h2 className="text-xl uppercase lg:text-2xl"><strong>Productos</strong> populares</h2>
@@ -27,59 +28,60 @@ const SectionProducts = ({ inline }: Props) => {
             {
                 inline && (
                     <Swiper
-                        slidesPerView={xl3 ? 5 : xl2 ? 4 : xl ? 3 : lg ? 2 : md ? 2 : sm ? 2 : 1}
-                        spaceBetween={30}
-                        className="mySwiper"
+                        navigation
+                        loop
+                        modules={[ Navigation ]}
+                        slidesPerView={xl3 ? 4 : xl2 ? 4 : xl ? 4 : lg ? 3 : md ? 2 : sm ? 2 : 1}
+                        spaceBetween={20}
                     >
                         <SwiperSlide>
-                            <CardProducts />
+                            <CardProducts inline />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <CardProducts />
+                            <CardProducts inline />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <CardProducts />
+                            <CardProducts inline />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <CardProducts />
+                            <CardProducts inline />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <CardProducts />
+                            <CardProducts inline />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <CardProducts />
+                            <CardProducts inline />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <CardProducts />
+                            <CardProducts inline />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <CardProducts />
+                            <CardProducts inline />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <CardProducts />
+                            <CardProducts inline />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <CardProducts />
+                            <CardProducts inline />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <CardProducts />
+                            <CardProducts inline />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <CardProducts />
+                            <CardProducts inline />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <CardProducts />
+                            <CardProducts inline />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <CardProducts />
+                            <CardProducts inline />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <CardProducts />
+                            <CardProducts inline />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <CardProducts />
+                            <CardProducts inline />
                         </SwiperSlide>
-
                     </Swiper>
                 )
             }

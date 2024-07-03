@@ -15,7 +15,7 @@ const About = () => {
     });
 
     return (
-        <div className="px-5 lg:px-12">
+        <div className="px-5 max-w-[1320px] lg:px-10 xl:mx-auto">
             <h1 className="text-2xl text-center font-bold py-8 mb-2 lg:text-4xl">¿Quienes somos?</h1>
 
             <div className="lg:flex lg:items-center lg:mb-10 2xl:justify-around">

@@ -64,7 +64,7 @@ const Articules = () => {
     ];
 
     return (
-        <section className="mx-5 mb-5 lg:mx-[50px]">
+        <section className="mx-5 mb-5 max-w-[13200px] lg:px-10 xl:mx-auto">
             <Group title={<><strong>BLOG</strong> & ARTICLE</>}/>
             <div className="sm:flex sm:flex-wrap sm:justify-around lg:gap-2">
                 {

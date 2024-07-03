@@ -43,7 +43,7 @@ const ProductDetail = () => {
     }, [count])
 
     return (
-        <div className="mx-5 mb-10 lg:mx-[50px]">
+        <div className="px-5 mb-10 max-w-[1280px] lg:mx-auto lg:px-10">
             <div className="flex items-center gap-2 mb-4 w-fit mt-5 cursor-pointer" onClick={() => navigate('/store')}>
                 <FontAwesomeIcon icon={faArrowLeft} className="text-base" />
                 <p className="text-lg font-semibold">Tienda</p>

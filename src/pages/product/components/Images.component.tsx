@@ -1,4 +1,5 @@
-import { Image } from "antd";
+import { Swiper, SwiperClass, SwiperRef, SwiperSlide } from "swiper/react";
+import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 
 const images = [
     "https://risingtheme.com/html/demo-partsix/partsix/assets/img/product/big-product/product1.webp",
@@ -9,37 +10,52 @@ const images = [
     "https://risingtheme.com/html/demo-partsix/partsix/assets/img/product/big-product/product6.webp",
 ]
 
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/navigation';
+import 'swiper/css/thumbs';
+import { useRef, useState } from "react";
+import { Image } from "antd";
+
 const ImagesView = () => {
-    const settings = {
-        customPaging: function(i: number) {
-          return (
-            <a>
-              <img src={`https://risingtheme.com/html/demo-partsix/partsix/assets/img/product/big-product/product${i + 1}.webp`} />
-            </a>
-          );
-        },
-        dots: true,
-        dotsClass: "d-flex",
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false
-      };
+    const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
+    const swiperElRef = useRef<SwiperRef>(null);
 
     return (
         <div className="slider-container sm:mx-auto lg:w-1/2 mb-3">
-            {/* <Slider {...settings}>
+            <Swiper
+            loop={true}
+            navigation={true}
+            spaceBetween={10}
+            modules={[FreeMode, Navigation, Thumbs]}
+            thumbs={{ swiper: thumbsSwiper }}
+            >
                 {
-                    images.map((src: string) => {
-                        return (
-                            <div className="mx-auto">
-                                <Image src={src} alt="" />
-                            </div>
-                        )
-                    })
+                    images.map( image => (
+                        <SwiperSlide>
+                            <Image src={image} alt={image} rootClassName="w-full" className="object-cover" />
+                        </SwiperSlide>
+                    ))
                 }
-            </Slider> */}
+            </Swiper>
+            <Swiper
+            ref={swiperElRef}
+            onSwiper={setThumbsSwiper}
+            loop={true}
+            spaceBetween={10}
+            slidesPerView={4}
+            freeMode={true}
+            watchSlidesProgress={true}
+            modules={[FreeMode, Navigation, Thumbs]}
+            >
+                {
+                    images.map( image => (
+                        <SwiperSlide>
+                            <img src={image} alt={image} className="cursor-pointer" />
+                        </SwiperSlide>
+                    ))
+                }
+            </Swiper>
         </div>
     )
 }

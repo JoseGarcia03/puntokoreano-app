@@ -36,7 +36,7 @@ const VehiclesBrand = () => {
         },
     ]
     return (
-        <section className="mx-5 my-5">
+        <section className="mx-5 my-5 max-w-[1280px] xl:mx-auto">
             <h1
             className="text-xl font-bold underline decoration-[#FFEC0C] uppercase text-center underline-offset-4 sm:text-2xl xl:text-3xl"
             >

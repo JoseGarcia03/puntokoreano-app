@@ -7,7 +7,6 @@ const Store = () => {
         <div>
             <GroupComponent />
             <SectionProducts />
-            <SectionProducts />
         </div>
     )
 }

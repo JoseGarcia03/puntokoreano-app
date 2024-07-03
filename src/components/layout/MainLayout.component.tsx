@@ -51,8 +51,8 @@ export const MainLayout = ({ children }: Props) => {
 
     return (
         <Layout>
-             <ScrollRestoration />
-             <Header
+            <ScrollRestoration />
+            <Header
             className="header"
             >
                 <div className="container-header">
@@ -71,52 +71,23 @@ export const MainLayout = ({ children }: Props) => {
                         </figcaption>
                     </figure>
 
-                    <Menu
-                    className="header-menu"
-                    theme="dark"
-                    mode="horizontal"
-                    items={items}
-                    defaultSelectedKeys={['home']}
-                    overflowedIndicator={<FontAwesomeIcon icon={faBars} className="text-white" size="xl"/>}
-                    />
-
-                    {/* <Avatar
-                    size="large"
-                    icon={<FontAwesomeIcon icon={faUserCircle} />}
-                    className="cursor-pointer"
-                    /> */}
-
-                    <button className="user-btn">
-                        <FontAwesomeIcon
-                        className="text-inherit"
-                        icon={faUser}
-                        size="xl"
-                        />
-                    </button>
-                </div>
-            </Header>
-            {/* <Header
-                className={`flex justify-between items-center sticky z-20 top-0 bg-primary`} 
-            >
-                <Flex className="max-w-[1280px] mx-auto w-full" >
-                    <Flex align="center" gap={10} className="w-fit text-white flex-1 hover:text-[#FFEC0C] transition-[color] duration-300">
-                        <img src={Logo} width={50} onClick={() => navigate('/')} className="cursor-pointer" />
-                        <h2 className="text-xl md:text-2xl w-36 md:w-48 cursor-pointer font-[Karate]" onClick={() => navigate('/')}>Punto Koreano</h2>
-                    </Flex>
-                    <Flex align="center" justify={"flex-end"}>
-                        {!location.pathname.includes('store') && <Menu
-                        defaultSelectedKeys={['1']}
-                        className={`w-16 sm:w-48 md:w-72 lg:w-80 bg-primary text-white`}
+                    <div className="flex items-center">
+                        <Menu
+                        className="header-menu"
+                        theme="dark"
                         mode="horizontal"
                         items={items}
-                        overflowedIndicator={<FontAwesomeIcon icon={faBars} />}
-                        />}
+                        defaultSelectedKeys={['home']}
+                        overflowedIndicator={<FontAwesomeIcon icon={faBars} className="text-white" size="xl"/>}
+                        />
+
                         { (location.pathname.includes('store') && !location.pathname.includes('search')) &&
                             <FontAwesomeIcon
                             icon={faSearch}
                             className="text-white text-xl p-2 cursor-pointer"
-                            /> 
+                            />
                         }
+
                         { location.pathname.includes('store') &&
                             <FontAwesomeIcon
                             onClick={handleOpenWishModal}
@@ -124,6 +95,7 @@ export const MainLayout = ({ children }: Props) => {
                             className="text-white text-xl p-2 cursor-pointer"
                             />
                         }
+
                         { location.pathname.includes('store') &&
                             <FontAwesomeIcon
                             onClick={handleOpenCarModal}
@@ -131,25 +103,29 @@ export const MainLayout = ({ children }: Props) => {
                             className="text-white text-xl p-2 cursor-pointer"
                             />
                         }
-                        <Avatar
-                        size="large"
-                        icon={<FontAwesomeIcon icon={faUserCircle} />}
-                        className="cursor-pointer"
-                        />
-                    </Flex>
-                </Flex>
-            </Header> */}
-            <Content>
+
+                        <button className="user-btn">
+                            <FontAwesomeIcon
+                            className="text-inherit"
+                            icon={faUser}
+                            size="xl"
+                            />
+                        </button>
+                    </div>
+
+                </div>
+            </Header>
+
+            <Content className="relative">
                 { children }
+
+                <WhatsAppButton />
             </Content>
 
             {/* Modals */}
             <WishlistModal open={openWish} setOpen={setOpenWish} />
             <CartModal open={openCart} setOpen={setOpenCart} />
 
-
-            {/* Buttons */}
-            <WhatsAppButton />
             <Footer />
         </Layout>
     )

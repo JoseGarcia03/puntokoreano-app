@@ -40,7 +40,7 @@ const Blog = () => {
     ];
 
     return (
-        <div className="mx-5 lg:mx-[50px]">
+        <div className="mx-5 max-w-[1320px] md:mx-10 lg:px-10 xl:mx-auto">
             <section className="my-5 md:flex md:justify-between md:items-center">
                 <div className="md:flex md:flex-col md:items-start md:w-1/2">
                     <h1 className="text-2xl underline decoration-[#CD42E9] text-center uppercase xl:text-4xl">

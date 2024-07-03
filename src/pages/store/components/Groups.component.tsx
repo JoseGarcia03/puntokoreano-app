@@ -1,6 +1,10 @@
-import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import Slider from 'react-slick';
+import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import useResizeObserver from "use-resize-observer";
 import SelectDropdown from "./Select.component";
+
 
 type group = {
     name: string;
@@ -14,6 +18,11 @@ type subgroups = {
 }
 
 const GroupComponent = () => {
+    const [ slidesToShow, setSlidesToSHow ] = useState(1);
+    const [ hoveredCategory, setHoveredCategory ] = useState<null | group >(null);
+
+    const { ref, width = 190 } = useResizeObserver();
+
     const { data } = useQuery({
         queryKey: ['groups'],
         queryFn: () => {
@@ -24,14 +33,40 @@ const GroupComponent = () => {
         }
     });
 
+    useEffect(() => {
+        const maxSlides = Math.floor( width / 180 );
+        setSlidesToSHow( maxSlides );
+    }, [ width ])
+
     return (
-        <div className="w-full z-20">
-            <div className="bg-[#001529] flex overflow-x-auto h-fit px-2 2xl:justify-center">
-                {
-                    data?.groups?.map((group: group) => {
-                        return <SelectDropdown group={group} />
-                    })
-                }
+        <div className="w-full z-20 bg-header px-2">
+            <div className="max-w-[1320px] mx-auto overflow-hidden lg:px-10">
+                <div ref={ref} className="flex h-fit px-2 justify-center text-white mx-5">
+                    <Slider
+                    className="w-full"
+                    infinite
+                    dots={false}
+                    slidesToShow={slidesToShow}
+                    slidesToScroll={2}
+                    variableWidth
+                    >
+                    {
+                        data?.groups?.map((group: group, idx: number ) => {
+                            return (
+                                <div
+                                key={ `${idx}-${group.name}` }
+                                onMouseEnter={() => setHoveredCategory(group)}
+                                onMouseLeave={() => setHoveredCategory(null)}
+                                className="whitespace-nowrap text-center px-4 cursor-pointer hover:text-secondary transition-all duration-300"
+                                >
+                                    { group.name }
+                                </div>
+                            )
+                        })
+                    }
+                    </Slider>
+                </div>
+                <SelectDropdown hoveredCategory={hoveredCategory} setHoveredCategory={setHoveredCategory} />
             </div>
         </div>
     )

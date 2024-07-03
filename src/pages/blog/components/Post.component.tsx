@@ -1,6 +1,6 @@
 const BlogPost = () => {
     return (
-        <section className="mx-5 my-5 lg:max-w-[1024px] lg:mx-auto">
+        <section className="mx-5 my-5 max-w-[1320px] lg:px-10 xl:mx-auto">
             <article className="text-base lg:text-lg">
                 <h1 className="font-bold text-xl lg:text-2xl">Lorem ipsum dolor, sit amet consectetur elit saepe!</h1>
                 <p className="my-2 lg:mt-0">Posted By: Joe Doe / On: Marzo 26</p>

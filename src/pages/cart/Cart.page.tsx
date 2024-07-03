@@ -124,7 +124,7 @@ const Cart = () => {
     ]
 
     return (
-        <div className="px-5 pt-4 lg:px-[50px] xl:min-h-[80vh]">
+        <div className="max-w-[1280px] px-5 pt-4 lg:px-[50px] xl:min-h-[80vh] xl:mx-auto xl:px-0">
             <section
             className="flex items-center gap-3 w-fit cursor-pointer"
             onClick={() => navigate('/store')}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Dispatch } from "react";
 
 type group = {
     name: string;
@@ -12,50 +12,60 @@ type subgroups = {
 }
 
 interface Props {
-    group: group
+    hoveredCategory: null | group;
+    setHoveredCategory: Dispatch<React.SetStateAction<group | null>>
 }
 
-const SelectDropdown = ({ group }: Props) => {
-    const [ isOpen, setIsOpen ] = React.useState<boolean>(false);
-
-    const handleMouseEnter = () => {
-        setIsOpen(true)
-    }
-
-    const handleMauseLeave = () => {
-        setIsOpen(false)
-    }
+const SelectDropdown = ({ hoveredCategory, setHoveredCategory }: Props) => {
 
     return (
-        <div
-            className="h-full"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMauseLeave}
-        >
-            <div className="px-4 cursor-pointer hover:text-[#FEEB0B] text-white text-nowrap">
-                { group.name }
-            </div>
+        <>
             {
-                isOpen && (
+                hoveredCategory && (
                     <div
-                        className="absolute z-10 shadow-md left-0 right-0 h-fit max-h-[58vh] flex flex-col flex-wrap items-start gap-1 p-5 overflow-x-auto bg-white"
+                    onMouseEnter={() => setHoveredCategory(hoveredCategory)}
+                    onMouseLeave={() => setHoveredCategory(null)}
+                    className="absolute z-10 shadow-md left-0 right-0 h-fit max-h-[80vh] bg-white"
                     >
-                        {
-                            group?.subgroups?.map((subgroup, idx) => {
-                                return (
-                                    <span
-                                        key={`${subgroup?.name}-${idx}`}
-                                        className="w-[170px] hover:text-[#E2060F] cursor-pointer"
+                        <div
+                        className="w-full h-fit max-w-[1320px] lg:px-10 xl:mx-auto py-4"
+                        >
+                            <h2 className="text-xl font-bold">{ hoveredCategory.name }</h2>
+                            <div className="flex items-start justify-between max-h-[70vh]">
+                                <div
+                                className="flex flex-col flex-wrap max-h-[70vh] overflow-auto w-fit gap-x-2"
+                                >
+                                    {
+                                        hoveredCategory?.subgroups.map(( subgroup: Record<string, any>, idx: number ) => (
+                                            <span
+                                            key={`${idx}-${hoveredCategory.name}`}
+                                            className="w-fit cursor-pointer hover:text-secondary_3"
+                                            >
+                                                { subgroup.name }
+                                            </span>
+                                        ))
+                                    }
+                                </div>
+                                <figure
+                                className="w-96 hidden xl:block xl:w-80 place-content-end xl:self-start"
+                                >
+                                    <img
+                                    src={ hoveredCategory.image }
+                                    alt={ hoveredCategory.name }
+                                    className="w-full h-full object-contain"
+                                    />
+                                    <figcaption
+                                    className="font-semibold text-sm mt-1"
                                     >
-                                        { subgroup?.name }
-                                    </span>
-                                )
-                            })
-                        }
+                                        { hoveredCategory.description }
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
                     </div>
                 )
             }
-        </div>
+        </>
     )
 }
 export default SelectDropdown;
