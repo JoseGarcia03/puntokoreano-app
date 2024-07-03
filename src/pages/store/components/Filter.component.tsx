@@ -764,8 +764,8 @@ const FilterStore = () => {
     }, [brand, model, family, transmission, fuel, line])
 
     return (
-        <div className="bg-[url('https://puntokoreano.com/images/filter_background.png')] w-full h-screen bg-center 2xl:bg-contain" >
-            <div className="w-full sm:w-96 sm:mx-auto lg:w-[500px] 2xl:w-[600px] p-10">
+        <div className="bg-[url('https://puntokoreano.com/images/filter_background.png')] w-full h-fit bg-center 2xl:bg-contain" >
+            <div className="w-full p-10 sm:w-96 sm:mx-auto lg:w-[500px] 2xl:w-[600px]">
                 <Form labelCol={{ span: 4 }} layout="vertical">
                     <h1 className="text-2xl text-center font-bold w-full mb-5 2xl:text-3xl">Encuentra tus repuestos Ssangyong fácilmente</h1>
                     <Form.Item<FieldType>

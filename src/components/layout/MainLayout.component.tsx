@@ -12,6 +12,7 @@ import WhatsAppButton from "../buttons/Whatsapp.component";
 import WishlistModal from "../Modals/Wishlist.component";
 
 import './style.css';
+import GroupsModal from "../Modals/GroupsModal.component";
 
 interface Props {
     children: React.ReactElement
@@ -23,9 +24,11 @@ export const MainLayout = ({ children }: Props) => {
     const navigate = useNavigate();
     const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
     const isTablet = useMediaQuery({ query: '(max-width: 1023px)' });
+    const isDesk = useMediaQuery({ query: '(min-width: 1024px)' });
 
     const [ openCart, setOpenCart ] = useState<boolean>(false);
     const [ openWish, setOpenWish ] = useState<boolean>(false);
+    const [ openGroups, setOpenGroups ] = useState<boolean>(false);
 
     const handleOpenCarModal = () => setOpenCart(true);
     const handleOpenWishModal = () => setOpenWish(true);
@@ -49,21 +52,39 @@ export const MainLayout = ({ children }: Props) => {
         }
     ]
 
+
     return (
         <Layout>
             <ScrollRestoration />
             <Header
             className="header"
             >
-                <div className="container-header">
+                <div className={`${isTablet && 'justify-between'} container-header`}>
+                    { (location.pathname.includes('store') && !location.pathname.includes('search') && isTablet ) &&
+                        <div className="flex items-center">
+                            <FontAwesomeIcon
+                            icon={faBars}
+                            className="text-white text-xl p-2 cursor-pointer"
+                            onClick={() => setOpenGroups(true)}
+                            />
+                            <FontAwesomeIcon
+                            icon={faSearch}
+                            className="text-white text-xl p-2 cursor-pointer"
+                            />
+                        </div>
+                    }
                     <figure
                     className="figure-logo"
+                    onClick={() => navigate('/')}
                     >
-                        <img
-                        className="logo"
-                        src="https://puntokoreano.com/images/logos/logo_1.png"
-                        alt="Punto Koreano Logo"
-                        />
+                        {
+                            ( location.pathname === '/' || location.pathname === '/store/search' || !location.pathname.startsWith('/store') || isDesk ) &&
+                            <img
+                            className="logo"
+                            src="https://puntokoreano.com/images/logos/logo_1.png"
+                            alt="Punto Koreano Logo"
+                            />
+                        }
                         <figcaption
                         className="figcaption-logo"
                         >
@@ -72,6 +93,7 @@ export const MainLayout = ({ children }: Props) => {
                     </figure>
 
                     <div className="flex items-center">
+                        { ( location.pathname === '/' || location.pathname === '/store/search' || !location.pathname.startsWith('/store') || isDesk ) &&
                         <Menu
                         className="header-menu"
                         theme="dark"
@@ -79,16 +101,9 @@ export const MainLayout = ({ children }: Props) => {
                         items={items}
                         defaultSelectedKeys={['home']}
                         overflowedIndicator={<FontAwesomeIcon icon={faBars} className="text-white" size="xl"/>}
-                        />
+                        />}
 
-                        { (location.pathname.includes('store') && !location.pathname.includes('search')) &&
-                            <FontAwesomeIcon
-                            icon={faSearch}
-                            className="text-white text-xl p-2 cursor-pointer"
-                            />
-                        }
-
-                        { location.pathname.includes('store') &&
+                        { (location.pathname.includes('store') && !location.pathname.includes('search')  || isDesk ) &&
                             <FontAwesomeIcon
                             onClick={handleOpenWishModal}
                             icon={faHeart}
@@ -96,7 +111,7 @@ export const MainLayout = ({ children }: Props) => {
                             />
                         }
 
-                        { location.pathname.includes('store') &&
+                        { (location.pathname.includes('store') && !location.pathname.includes('search') || isDesk ) &&
                             <FontAwesomeIcon
                             onClick={handleOpenCarModal}
                             icon={faCartShopping}
@@ -104,13 +119,15 @@ export const MainLayout = ({ children }: Props) => {
                             />
                         }
 
-                        <button className="user-btn">
-                            <FontAwesomeIcon
-                            className="text-inherit"
-                            icon={faUser}
-                            size="xl"
-                            />
-                        </button>
+                        { ( location.pathname === '/' || location.pathname === '/store/search' || !location.pathname.startsWith('/store') || isDesk ) &&
+                            <button className="user-btn">
+                                <FontAwesomeIcon
+                                className="text-inherit"
+                                icon={faUser}
+                                size="xl"
+                                />
+                            </button>
+                        }
                     </div>
 
                 </div>
@@ -125,6 +142,7 @@ export const MainLayout = ({ children }: Props) => {
             {/* Modals */}
             <WishlistModal open={openWish} setOpen={setOpenWish} />
             <CartModal open={openCart} setOpen={setOpenCart} />
+            <GroupsModal open={openGroups} setOpen={setOpenGroups} />
 
             <Footer />
         </Layout>

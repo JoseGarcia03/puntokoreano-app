@@ -6,17 +6,17 @@
     @apply sticky top-0 px-0 bg-header z-50;
 
     .container-header {
-        @apply px-2 h-full flex md:px-10 xl:px-10 max-w-[1320px] mx-auto;
+        @apply px-2 h-full flex justify-between items-center max-w-[1320px] mx-auto md:px-10;
 
         .figure-logo {
-            @apply w-12 flex items-center h-full gap-2 cursor-pointer text-white hover:text-secondary animate flex-1;
+            @apply flex items-center h-full gap-2 cursor-pointer text-white hover:text-secondary animate;
 
             .logo {
                 @apply w-12;
             }
 
             .figcaption-logo {
-                @apply text-inherit whitespace-nowrap font-karate text-2xl hidden sm:inline;
+                @apply text-inherit whitespace-nowrap font-karate text-2xl;
             }
         }
 
@@ -25,7 +25,7 @@
         }
 
         .user-btn {
-            @apply border-none bg-header cursor-pointer ml-2 text-white hover:text-secondary animate;
+            @apply border-none bg-header cursor-pointer mx-4 text-white hover:text-secondary animate;
         }
 
     }
