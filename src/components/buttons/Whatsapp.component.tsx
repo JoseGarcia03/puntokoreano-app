@@ -33,6 +33,7 @@ const WhatsAppButton = () => {
         statusMessage="Normalmente, responde en menos de 1 hora"
         avatar="https://static.elfsight.com/apps/all-in-one-chat/avatars/general.jpeg"
         buttonStyle={{ bottom: `${bottom}rem` }}
+        chatboxStyle={{ bottom: `${bottom + 4}rem`}}
         buttonClassName='transition-all duration-200'
         />
     )
