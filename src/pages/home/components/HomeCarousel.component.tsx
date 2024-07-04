@@ -1,17 +1,19 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+import './styles.css';
+
 export const HomeCarousel = () => {
         return (
             <Swiper
-            navigation
+            navigation={false}
             loop
-            modules={[Navigation, Pagination, Autoplay]}
+            modules={[Pagination, Autoplay]}
             pagination={{
                 clickable: true,
             }}
