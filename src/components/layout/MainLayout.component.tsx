@@ -1,8 +1,7 @@
-import { Avatar, Flex, Layout, Menu } from "antd";
-import Logo from "../../assets/logo-512x512.png";
+import { Layout, Menu } from "antd";
 import { Content, Header } from "antd/es/layout/layout";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faCartShopping, faHeart, faSearch, faUser, faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faCartShopping, faHeart, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
 import { useMediaQuery } from "react-responsive";
 import { Link, ScrollRestoration, useLocation, useNavigate } from "react-router-dom";
 import Footer from "../../pages/home/components/Footer.component";
@@ -22,7 +21,6 @@ interface Props {
 export const MainLayout = ({ children }: Props) => {
     const location = useLocation();
     const navigate = useNavigate();
-    const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
     const isTablet = useMediaQuery({ query: '(max-width: 1023px)' });
     const isDesk = useMediaQuery({ query: '(min-width: 1024px)' });
 
@@ -103,7 +101,7 @@ export const MainLayout = ({ children }: Props) => {
                         overflowedIndicator={<FontAwesomeIcon icon={faBars} className="text-white" size="xl"/>}
                         />}
 
-                        { (location.pathname.includes('store') && !location.pathname.includes('search')  || isDesk ) &&
+                        { (location.pathname.includes('store') && !location.pathname.includes('search')  || (isDesk && location.pathname.includes('store'))) &&
                             <FontAwesomeIcon
                             onClick={handleOpenWishModal}
                             icon={faHeart}
@@ -111,7 +109,7 @@ export const MainLayout = ({ children }: Props) => {
                             />
                         }
 
-                        { (location.pathname.includes('store') && !location.pathname.includes('search') || isDesk ) &&
+                        { (location.pathname.includes('store') && !location.pathname.includes('search') || (isDesk && location.pathname.includes('store')) ) &&
                             <FontAwesomeIcon
                             onClick={handleOpenCarModal}
                             icon={faCartShopping}

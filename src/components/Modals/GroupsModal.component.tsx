@@ -3,8 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useQuery } from "@tanstack/react-query";
 import { Drawer } from "antd";
 import axios from "axios";
-import { useEffect, useState } from "react";
-import Slider from "react-slick";
+import { useState } from "react";
 import SubgroupModal from "./Subgroups.component";
 
 interface Props {

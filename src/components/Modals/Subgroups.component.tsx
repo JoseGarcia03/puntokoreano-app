@@ -1,7 +1,6 @@
 import { faChevronLeft, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Drawer } from "antd";
-import { useNavigate } from "react-router-dom";
 
 interface Props {
     open: boolean;

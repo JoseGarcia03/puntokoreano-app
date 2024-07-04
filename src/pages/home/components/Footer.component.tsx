@@ -1,5 +1,4 @@
 import { Divider } from "antd";
-import cars from "../../../assets/ssangyong_cars.jpg"
 import korea from "../../../assets/bandera_korea.png";
 import alemania from "../../../assets/banera_alemania.png";
 import colombia from "../../../assets/bandera_colombia.webp";
