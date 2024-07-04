@@ -5,7 +5,7 @@
         @apply  p-4 flex flex-col justify-center items-center lg:flex-row lg:px-10 lg:py-1 lg:justify-around;
 
         img {
-            @apply w-24 xl:h-full lg:w-32 lg:mx-1;
+            @apply w-20 xl:h-full lg:w-32 lg:mx-1;
         }
 
         .divider {
@@ -17,10 +17,10 @@
         }
 
         .container-brand {
-            @apply py-8 lg:py-2;
+            @apply py-4 lg:py-2;
 
             img {
-                @apply block mx-auto w-32 pb-3 lg:w-40;
+                @apply block mx-auto w-28 pb-3 lg:w-40;
             }
 
             figcaption {
@@ -34,7 +34,7 @@
     @apply bg-gradient-to-b from-[#272930] via-white to-[#DFDFDF] lg:max-h-[440px] selection:w-full lg:-mt-44;
 
     .container-service {
-        @apply max-w-[1280px] mx-auto w-full flex flex-col gap-8 py-16 lg:flex-row md:px-4 lg:pt-56 lg:px-8 xl:justify-around 2xl:pb-28;
+        @apply max-w-[1280px] mx-auto w-full flex flex-col gap-8 py-8 lg:flex-row md:px-4 lg:pt-48 lg:px-8 xl:pt-28 xl:justify-around 2xl:pb-28;
     }
 
     .service {
