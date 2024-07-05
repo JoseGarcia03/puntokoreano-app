@@ -14,7 +14,6 @@ type FieldType = {
 const FilterStore = () => {
     const navigate = useNavigate();
 
-    const brands = [{value: "ssangyong", label: "SSANGYONG"}];
     const models = Array.from({ length: 2025 - 2003 + 1 }, (_, i) => {
         const year = 2003 + i;
         return { label: `${year}`, value: `${year}` };
@@ -717,21 +716,13 @@ const FilterStore = () => {
         }
     };
 
-    const [ brand, setBrand ] = React.useState<string>("");
+    const [ brand ] = React.useState<string>("ssangyong");
     const [ model, setModel ] = React.useState<string>("");
     const [ family, setFamily ] = React.useState<string>("");
     const [ transmission, setTransmission ] = React.useState<string>("");
     const [ fuel, setFuel ] = React.useState<string>("");
     const [ line, setLine ] = React.useState<string>("");
 
-    const handleBrandChange = (value: string) => {
-        setBrand(value);
-        setModel("");
-        setFamily("");
-        setTransmission("");
-        setFuel("");
-        setLine("");
-    };
 
     const handleModelChange = (value: string) => {
         setModel(value);
@@ -768,15 +759,6 @@ const FilterStore = () => {
             <div className="w-full p-10 sm:w-96 sm:mx-auto lg:w-[500px] 2xl:w-[600px]">
                 <Form labelCol={{ span: 4 }} layout="vertical">
                     <h1 className="text-2xl text-center font-bold w-full mb-5 2xl:text-3xl">Encuentra tus repuestos Ssangyong fácilmente</h1>
-                    <Form.Item<FieldType>
-                        label="Marca"
-                        name="brand"
-                        required
-                        labelCol={{ span: 24 }}
-                        className="font-bold"
-                    >
-                        <Select value={brand} options={brands} onChange={(value) => handleBrandChange(value)} />
-                    </Form.Item>
                     <Form.Item<FieldType>
                         label="Modelo"
                         name="model"

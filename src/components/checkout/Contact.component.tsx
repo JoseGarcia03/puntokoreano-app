@@ -2,6 +2,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Form, FormProps, Input } from "antd";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
     setStatus:React.Dispatch<React.SetStateAction<"wait" | "process" | "finish" | "error" | undefined>>
@@ -16,6 +17,7 @@ type FieldType = {
 }
 
 const Contact = ({ setStatus, setCurrent }: Props) => {
+    const navigate = useNavigate();
     const onFinish: FormProps<FieldType>['onFinish'] = () => {
         setCurrent(1);
     }
@@ -71,14 +73,26 @@ const Contact = ({ setStatus, setCurrent }: Props) => {
             >
                 <Input type="number" placeholder="3126734589" />
             </Form.Item>
-            <Form.Item<FieldType>>
-                <button
-                type="submit"
-                className="flex items-center gap-2 bg-[#E2060F] text-white py-1 px-2 rounded-lg text-base hover:bg-[#001529] transition-all duration-300"
-                >
-                    Envío <FontAwesomeIcon icon={faArrowRight} />
-                </button>
-            </Form.Item>
+            <section className="flex gap-5">
+                <Form.Item<FieldType>>
+                    <button
+                    onClick={() => navigate('/store')}
+                    type="submit"
+                    className="flex items-center gap-2 text-[#5037f4] font-medium py-1 px-2 rounded-lg text-base"
+                    >
+                        Seguir comprando
+                    </button>
+                </Form.Item>
+
+                <Form.Item<FieldType>>
+                    <button
+                    type="submit"
+                    className="flex items-center gap-2 bg-[#E2060F] text-white py-1 px-2 rounded-lg text-base hover:bg-[#001529] transition-all duration-300"
+                    >
+                        Envío <FontAwesomeIcon icon={faArrowRight} />
+                    </button>
+                </Form.Item>
+            </section>
         </Form>
     )
 };

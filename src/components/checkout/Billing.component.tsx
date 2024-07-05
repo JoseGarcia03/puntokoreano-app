@@ -125,25 +125,36 @@ const Billing = ({ setStatus, setCurrent }: Props) => {
                     </>
                 )
             }
-            <div className="flex gap-5 items-center">
+            <div className="flex gap-x-5 items-center flex-wrap">
                 <Form.Item<FieldType>>
                     <button
-                    type="button"
-                    onClick={handleBack}
-                    className="flex items-center gap-2 bg-[#E2060F] text-white py-1 px-2 rounded-lg text-base hover:bg-[#001529] transition-all duration-300"
-                    >
-                        <FontAwesomeIcon icon={faArrowLeft} /> Envío
-                    </button>
-                </Form.Item>
-
-                <Form.Item<FieldType>>
-                    <button
+                    onClick={() => navigate('/store')}
                     type="submit"
-                    className="flex items-center gap-2 bg-[#E2060F] text-white py-1 px-2 rounded-lg text-base hover:bg-[#001529] transition-all duration-300"
+                    className="flex items-center gap-2 text-[#5037f4] font-medium py-1 px-2 rounded-lg text-base"
                     >
-                        Pago <FontAwesomeIcon icon={faArrowRight} />
+                        Seguir comprando
                     </button>
                 </Form.Item>
+                <div className="flex gap-x-5 items-center">
+                    <Form.Item<FieldType>>
+                        <button
+                        type="button"
+                        onClick={handleBack}
+                        className="flex items-center gap-2 bg-[#E2060F] text-white py-1 px-2 rounded-lg text-base hover:bg-[#001529] transition-all duration-300"
+                        >
+                            <FontAwesomeIcon icon={faArrowLeft} /> Envío
+                        </button>
+                    </Form.Item>
+
+                    <Form.Item<FieldType>>
+                        <button
+                        type="submit"
+                        className="flex items-center gap-2 bg-[#E2060F] text-white py-1 px-2 rounded-lg text-base hover:bg-[#001529] transition-all duration-300"
+                        >
+                            Pago <FontAwesomeIcon icon={faArrowRight} />
+                        </button>
+                    </Form.Item>
+                </div>
             </div>
         </Form>
     );

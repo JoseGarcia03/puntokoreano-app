@@ -1,6 +1,7 @@
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Form, FormProps, Input, InputNumber, Select } from "antd";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
     setStatus:React.Dispatch<React.SetStateAction<"wait" | "process" | "finish" | "error" | undefined>>
@@ -16,6 +17,7 @@ type FieldType = {
 }
 
 const Shipping = ({ setStatus, setCurrent }: Props) => {
+    const navigate = useNavigate();
     const onFinish: FormProps<FieldType>['onFinish'] = () => {
         setCurrent(2);
     };
@@ -91,25 +93,36 @@ const Shipping = ({ setStatus, setCurrent }: Props) => {
                 <InputNumber style={{ width: '100%' }} />
             </Form.Item>
 
-            <div className="flex gap-5 items-center">
+            <section className="flex gap-x-5 items-center flex-wrap">
                 <Form.Item<FieldType>>
                     <button
-                    type="button"
-                    onClick={handleBack}
-                    className="flex items-center gap-2 bg-[#E2060F] text-white py-1 px-2 rounded-lg text-base hover:bg-[#001529] transition-all duration-300"
+                    onClick={() => navigate('/store')}
+                    type="submit"
+                    className="gap-2 text-[#5037f4] font-medium py-1 px-2 rounded-lg text-base whitespace-nowrap"
                     >
-                        <FontAwesomeIcon icon={faArrowLeft} /> Contacto
+                        Seguir comprando
                     </button>
                 </Form.Item>
-                <Form.Item<FieldType>>
-                    <button
-                    className="flex items-center gap-2 bg-[#E2060F] text-white py-1 px-2 rounded-lg text-base hover:bg-[#001529] transition-all duration-300"
-                    >
-                        Facturación
-                        <FontAwesomeIcon icon={faArrowRight} />
-                    </button>
-                </Form.Item>
-            </div>
+                <div className="flex gap-x-5 items-center">
+                    <Form.Item<FieldType>>
+                        <button
+                        type="button"
+                        onClick={handleBack}
+                        className="flex items-center gap-2 bg-[#E2060F] text-white py-1 px-2 rounded-lg text-base hover:bg-[#001529] transition-all duration-300"
+                        >
+                            <FontAwesomeIcon icon={faArrowLeft} /> Contacto
+                        </button>
+                    </Form.Item>
+                    <Form.Item<FieldType>>
+                        <button
+                        className="flex items-center gap-2 bg-[#E2060F] text-white py-1 px-2 rounded-lg text-base hover:bg-[#001529] transition-all duration-300"
+                        >
+                            Facturación
+                            <FontAwesomeIcon icon={faArrowRight} />
+                        </button>
+                    </Form.Item>
+                </div>
+            </section>
 
         </Form>
     )

@@ -21,34 +21,34 @@ export const HomeCarousel = () => {
                 delay: 2500,
                 disableOnInteraction: false,
             }}
-            className='h-44 sm:h-96 lg:h-[60vh] xl:h-[80vh]'
+            className='h-64 sm:h-96 lg:h-[60vh] xl:h-[80vh]'
             >
                 <SwiperSlide>
                     <img
                     src="https://puntokoreano.com/images/carrousel/KORANDO.jpg"
                     alt="korando"
-                    className="h-44 sm:h-96 xl:h-[80vh] lg:h-[60vh] w-full object-cover brightness-[.2]"
+                    className="h-full sm:h-96 xl:h-[80vh] lg:h-[60vh] w-full object-cover brightness-[.2]"
                     />
                 </SwiperSlide>
                 <SwiperSlide>
                     <img
                     src="https://puntokoreano.com/images/carrousel/REXTON.webp"
                     alt="rexton"
-                    className="h-44 sm:h-96 xl:h-[80vh] lg:h-[60vh] w-full object-cover brightness-[.2]"
+                    className="h-full sm:h-96 xl:h-[80vh] lg:h-[60vh] w-full object-cover brightness-[.2]"
                     />
                 </SwiperSlide>
                 <SwiperSlide>
                     <img
                     src="https://puntokoreano.com/images/carrousel/TIVOLI.jpg"
                     alt="tivoli"
-                    className="h-44 sm:h-96 xl:h-[80vh] lg:h-[60vh] w-full object-cover brightness-[.2]"
+                    className="h-full sm:h-96 xl:h-[80vh] lg:h-[60vh] w-full object-cover brightness-[.2]"
                     />
                 </SwiperSlide>
                 <SwiperSlide>
                     <img
                     src="https://puntokoreano.com/images/carrousel/TORRES.jpg"
                     alt="torres"
-                    className="h-44 sm:h-96 xl:h-[80vh] lg:h-[60vh] w-full object-cover brightness-[.2]"
+                    className="h-full sm:h-96 xl:h-[80vh] lg:h-[60vh] w-full object-cover brightness-[.2]"
                     />
                 </SwiperSlide>
             </Swiper>

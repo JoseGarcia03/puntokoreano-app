@@ -23,6 +23,10 @@ import Articules from "../pages/blog/components/Articules.component";
 import BlogPost from "../pages/blog/components/Post.component";
 import Cart from "../pages/cart/Cart.page";
 import VirtualCard from "../components/cards/VirtualCard.component";
+import { useEffect } from "react";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -68,6 +72,15 @@ const Routes = () => {
     const isXl = useMediaQuery({ query: "(min-width: 1280px)" });
     const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1023px)" });
     const queryClient = new QueryClient();
+
+    useEffect(() => {
+        AOS.init({
+            startEvent: "DOMContentLoaded",
+            offset: 200,
+            duration: 800,
+            once: false,
+        });
+    }, [])
 
     return (
         <ConfigProvider

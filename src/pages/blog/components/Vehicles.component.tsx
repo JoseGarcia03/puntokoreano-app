@@ -44,9 +44,11 @@ const VehiclesBrand = () => {
             </h1>
             <div className="md:flex md:flex-wrap 2xl:justify-around">
                 {
-                    vehicles.map((vehicle) => {
+                    vehicles.map((vehicle, idx) => {
                         return (
                             <div
+                            data-aos="fade-up"
+                            key={`${idx}-${vehicle.name}`}
                             className="my-2 w-80 mx-auto cursor-pointer sm:my-4 lg:w-[35%] max-w-[500px]"
                             onClick={() => navigate(`/blog/${vehicle.brand}/${vehicle.name}/articles`)}
                             >

@@ -1,5 +1,5 @@
 .container-banner {
-    @apply bg-gradient-to-r from-secondary_1 to-secondary_2 max-w-[1280px] mx-auto relative xl:-top-24 z-10 lg:rounded-b-lg xl:rounded-lg;
+    @apply bg-gradient-to-r from-secondary_1 to-secondary_2 max-w-[1280px] mx-auto relative xl:-top-12 z-10 lg:rounded-b-lg xl:rounded-lg;
 
     .banner-content {
         @apply  p-4 flex flex-col justify-center items-center lg:flex-row lg:px-10 lg:py-1 lg:justify-around;
@@ -31,10 +31,10 @@
 }
 
 .container-services {
-    @apply bg-gradient-to-b from-[#272930] via-white to-[#DFDFDF] lg:max-h-[440px] selection:w-full lg:-mt-44;
+    @apply bg-gradient-to-b from-[#272930] via-white to-[#DFDFDF] lg:max-h-[500px] selection:w-full lg:-mt-44;
 
     .container-service {
-        @apply max-w-[1280px] mx-auto w-full flex flex-col gap-8 py-8 lg:flex-row md:px-4 lg:pt-48 lg:px-8 xl:pt-28 xl:justify-around 2xl:pb-28;
+        @apply max-w-[1280px] mx-auto w-full flex flex-col gap-8 py-8 lg:flex-row md:px-4 lg:pt-48 lg:px-8 xl:pt-36 xl:justify-around 2xl:pb-28;
     }
 
     .service {

@@ -48,7 +48,7 @@ const Services = () => {
 
     return (
         <div className="container-services">
-            <div className="container-service">
+            <div data-aos="fade-up" className="container-service">
                 { services.map( (service, idx) => {
                     const [ isOpen, setIsOpen ] = useState<boolean>(false);
 
@@ -64,7 +64,7 @@ const Services = () => {
                             {
                                 (isOpen && !isTable) && (
                                     <div>
-                                        { service.images.map (( image ) => <img src={image} className='mb-2 w-28 mx-auto' />)}
+                                        { service.images.map (( image, idx ) => <img key={`${idx}-{brands}`} src={image} className='mb-2 w-28 mx-auto' />)}
                                     </div>
                                 )
                             }

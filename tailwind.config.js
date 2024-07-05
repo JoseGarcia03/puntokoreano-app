@@ -25,7 +25,8 @@ export default {
         cardInfo: '#E6E6E6'
       },
       borderColor: {
-        card: '#E2060F'
+        card: '#E2060F',
+        header: '#221E1F',
       }
     },
   },

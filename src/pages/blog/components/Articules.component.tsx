@@ -68,7 +68,7 @@ const Articules = () => {
             <Group title={<><strong>BLOG</strong> & ARTICLE</>}/>
             <div className="sm:flex sm:flex-wrap sm:justify-around lg:gap-2">
                 {
-                    articles.map( article => <CardArticle article={article} /> )
+                    articles.map( (article, idx) => <div key={`${idx}-${article.title}`}><CardArticle article={article} /></div> )
                 }
             </div>
             <div className="bg-[#F7F7F7] flex items-center justify-center py-2 gap-2 rounded-lg">

@@ -60,14 +60,14 @@ const ProductDetail = () => {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus libero earum ipsum dolore. Quibusdam quas laudantium placeat, iste accusantium laboriosam maiores, quos quisquam ab, optio ut. Veniam, ipsa. Pariatur, quo!</p>
                     <Space className="mt-4 gap-8">
                         <Space className="gap-0">
-                            <button onClick={handleClicPlus} className="w-8 h-10 bg-gray-300 rounded-l-full font-bold text-xl flex justify-center items-center">+</button>
+                            <button onClick={handleClicRest} className="w-8 h-10 bg-gray-300 rounded-l-full font-bold text-xl flex justify-center items-center">-</button>
                             <input
                                 ref={inputRef}
                                 value={count}
                                 type="number"
                                 className="outline-none h-10 px-2 w-2 text-lg font-bold text-center box-content"
                             />
-                            <button onClick={handleClicRest} className="w-8 h-10 bg-gray-300 rounded-r-full font-bold text-xl flex justify-center items-center">-</button>
+                            <button onClick={handleClicPlus} className="w-8 h-10 bg-gray-300 rounded-r-full font-bold text-xl flex justify-center items-center">+</button>
                         </Space>
                         <button className="bg-[#E2060F] hover:bg-[#001529] transition-[background-color] duration-300 text-white px-4 py-2 rounded-full outline-none text-md font-semibold">Añadir al carrito</button>
                     </Space>

@@ -31,7 +31,7 @@ const SectionProducts = ({ inline }: Props) => {
                         navigation
                         loop
                         modules={[ Navigation ]}
-                        slidesPerView={xl3 ? 4 : xl2 ? 4 : xl ? 4 : lg ? 3 : md ? 2 : sm ? 2 : 1}
+                        slidesPerView={xl3 ? 3 : xl2 ? 3 : xl ? 3 : lg ? 3 : md ? 2 : sm ? 2 : 1}
                         spaceBetween={20}
                     >
                         <SwiperSlide>

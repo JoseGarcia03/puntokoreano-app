@@ -11,6 +11,7 @@ const CardArticle = ({ article }: Props) => {
 
     return (
         <div
+        data-aos="fade-up"
         onClick={() => navigate('/blog/post/1')}
         className="border w-full p-5 max-w-[390px] rounded-lg hover:border-[#E2060F] hover:bg-[#FAF0F7] transition-all duration-300 my-4 cursor-pointer sm:w-64 md:w-80 lg:w-[290px] xl:w-[380px] 2xl:w-full"
         >
