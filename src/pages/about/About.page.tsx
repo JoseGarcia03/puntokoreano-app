@@ -36,7 +36,7 @@ const About = () => {
 
     return (
         <div>
-            <h1 className="text-2xl text-center font-bold py-8 mb-2 lg:text-4xl font-glegoo">¿Quienes somos?</h1>
+            <h1 className="text-2xl text-center font-bold py-4 mb-2 uppercase lg:text-4xl font-glegoo">¿Quienes somos?</h1>
 
             <ParallaxBanner className="aspect-[2/1]">
                 <ParallaxBannerLayer expanded={false} speed={-20}>
@@ -53,7 +53,7 @@ const About = () => {
 
 
             <div className='mb-10 max-w-[1320px] mx-auto px-10'>
-                <h2 data-aos="fade-up" className="text-xl text-center my-10 font-semibold lg:text-4xl">Nuestros asesores</h2>
+                <h2 data-aos="fade-up" className="text-xl text-center my-8 font-semibold uppercase font-glegoo lg:text-4xl">Nuestros asesores</h2>
                 <div data-aos="fade-up" className="lg:flex lg:flex-wrap lg:justify-around">
                     {
                         consultants.map((asesor, idx) => {
@@ -63,19 +63,20 @@ const About = () => {
                                 <ReactCardFlip isFlipped={open}>
                                     <div
                                     key={`${idx}-${asesor.name}`}
+                                    onMouseEnter={() => setOpen(true)}
                                     className='relative w-80 border-4 border-[#5c4dce] p-1 rounded-2xl shadow-2xl mx-auto mb-10'
                                     >
-                                        <img src={ asesor.image } alt={ asesor.name } className='brightness-[.6] rounded-2xl h-[551px] object-cover' />
+                                        <img src={ asesor.image } alt={ asesor.name } className='rounded-2xl h-[551px] object-cover' />
 
-                                        <button
+                                        { !isDesktop && <button
                                         onClick={() => setOpen(true)}
                                         className='absolute top-4 right-4 bg-[#E2000E] text-white px-4 py-2 rounded-xl shadow-2xl hover:bg-[#001529] transition-all duration-300 uppercase'
                                         >
-                                            Dale click
-                                        </button>
+                                            Presiona aquí
+                                        </button>}
 
-                                        <section className='absolute bottom-4 right-4 text-[#ffffff] text-xl'>
-                                            <h3>{ asesor.name }</h3>
+                                        <section className='absolute bottom-0 left-0 text-[#ffffff] text-xl bg-[#2e2c2c79] w-full rounded-b-xl px-10 py-3'>
+                                            <h3 className='text-end'>{ asesor.name }</h3>
                                             <p className='text-end'>{ asesor.position }</p>
                                         </section>
                                     </div>
@@ -99,7 +100,7 @@ const About = () => {
             </div>
 
             <div data-aos="fade-up" className='max-w-[1320px] mx-auto px-5 lg:px-10 mb-20'>
-                <h2 data-aos="fade-up" className="text-xl text-center my-10 font-semibold lg:text-4xl">Donde nos ubicamos</h2>
+                <h2 data-aos="fade-up" className="text-xl text-center my-10 font-semibold uppercase font-glegoo lg:text-4xl">Donde nos ubicamos</h2>
                 <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d591.1331551163539!2d-74.07226717546645!3d4.655642602154403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a4dea43cd65%3A0x8c8013ea1b146459!2sPUNTO%20KOREANO%20S.A.S!5e0!3m2!1ses-419!2sco!4v1720207300180!5m2!1ses-419!2sco"
                 width="100%"

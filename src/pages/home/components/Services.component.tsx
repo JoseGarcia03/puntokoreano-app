@@ -57,25 +57,20 @@ const Services = () => {
                     return (
                         <figure
                         key={`${idx}-service`}
-                        onClick={() => !isTable && setIsOpen(!isOpen)}
+                        onClick={() => setIsOpen(!isOpen)}
                         onMouseLeave={() => setIsOpen(false)}
-                        className={`service cursor-pointer hover:-translate-y-4 ${(isOpen && !isTable) && 'bg-white rounded-2xl pb-6 absolute z-20 left-0 top-0'}`}
+                        className={`service cursor-pointer hover:-translate-y-4 ${(isOpen) && 'bg-white rounded-2xl pb-6 absolute z-20 left-0 top-0'}`}
                         >
                             <img className='img' src={ service.icon } alt={ service.label } />
                             <figcaption>{ service.label }</figcaption>
                             <FontAwesomeIcon icon={faChevronDown} className='text-xl' />
-
-                            {
-                                (isOpen && !isTable) && (
-                                    <div
-                                    className='transition-all duration-300'
-                                    >
-                                        { service.images.map (( image, idx ) =>
-                                            <img key={`${idx}-{brands}`} src={image} className='mb-2 w-28 mx-auto' />
-                                        )}
-                                    </div>
-                                )
-                            }
+                            <div
+                            className={`transition-all duration-500 ${isOpen ? "block": 'hidden'}`}
+                            >
+                                { service.images.map (( image, idx ) =>
+                                    <img key={`${idx}-{brands}`} src={image} className='mb-2 w-28 mx-auto' />
+                                )}
+                            </div>
                         </figure>
                     )
                 })}

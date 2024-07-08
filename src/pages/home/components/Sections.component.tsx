@@ -27,7 +27,7 @@ const Sections = () => {
             <div data-aos="fade-up" className={`container-main-sections`}>
                 <div
                 onClick={() => navigate('/store/search')}
-                className={`flex flex-col-reverse gap-4 mt-8 md:flex-row lg:justify-between border-2 border-solid border-header p-4 rounded-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-200 cursor-pointer`}
+                className={`flex flex-col-reverse gap-4  mt-8 md:flex-row lg:justify-between border-2 border-solid border-[#5c4dce] p-4 rounded-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-200 cursor-pointer`}
                 >
 
                     <div className={`md:flex-1 flex flex-col justify-between`}>
@@ -45,7 +45,7 @@ const Sections = () => {
 
                 <div
                 onClick={() => navigate('/about')}
-                className={`flex flex-col-reverse gap-4 mt-8 md:flex-row lg:justify-between border-2 border-solid border-header p-4 rounded-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-200 cursor-pointer`}>
+                className={`flex flex-col-reverse gap-4 mt-8 md:flex-row lg:justify-between border-2 border-solid border-[#5c4dce] p-4 rounded-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-200 cursor-pointer`}>
                     <div className={`md:flex-1 flex flex-col justify-between`}>
                         <h2 className={`text-2xl tracking-wide text-center uppercase md:text-justify 2xl:text-3xl font-glegoo`}>¿Quienes somos?</h2>
                         <p className={`text-center md:text-justify md:w-80 lg:w-96 2xl:text-xl font-exo`}>
@@ -61,7 +61,7 @@ const Sections = () => {
 
                 <div
                 onClick={() => navigate('blog')}
-                className={`flex flex-col-reverse gap-4 mt-8 md:flex-row border-2 border-solid border-header p-4 rounded-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-200 cursor-pointer`}>
+                className={`flex flex-col-reverse gap-4 mt-8 md:flex-row border-2 border-solid border-[#5c4dce] p-4 rounded-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-200 cursor-pointer`}>
                     <div className={`md:flex-1 flex flex-col justify-between`}>
                         <h2 className={`text-2xl tracking-wide text-center uppercase md:text-justify 2xl:text-3xl font-glegoo`}>Blog Interactivo</h2>
                         <p className={`text-center md:text-justify md:w-80 lg:w-96 2xl:text-xl font-exo`}>
