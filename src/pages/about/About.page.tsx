@@ -71,7 +71,7 @@ const About = () => {
                                         onClick={() => setOpen(true)}
                                         className='absolute top-4 right-4 bg-[#E2000E] text-white px-4 py-2 rounded-xl shadow-2xl hover:bg-[#001529] transition-all duration-300 uppercase'
                                         >
-                                            ¡Hablemos!
+                                            Dale click
                                         </button>
 
                                         <section className='absolute bottom-4 right-4 text-[#ffffff] text-xl'>

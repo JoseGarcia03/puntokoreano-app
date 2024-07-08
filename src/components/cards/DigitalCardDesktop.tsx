@@ -63,7 +63,7 @@ const DigitalCardDesktop = ({ asesor }: Props) => {
             w-full justify-center text-lg"
             >
                 <FontAwesomeIcon icon={faMobileScreen} />
-                Escanea Código QR
+                Escanea y hablemos
             </button>
 
         </section>

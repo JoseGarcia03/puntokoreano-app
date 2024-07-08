@@ -22,7 +22,6 @@ import VehiclesBrand from "../pages/blog/components/Vehicles.component";
 import Articules from "../pages/blog/components/Articules.component";
 import BlogPost from "../pages/blog/components/Post.component";
 import Cart from "../pages/cart/Cart.page";
-import VirtualCard from "../components/cards/VirtualCard.component";
 import { useEffect } from "react";
 
 import AOS from "aos";

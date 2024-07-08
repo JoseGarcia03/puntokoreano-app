@@ -37,7 +37,7 @@ const VirtualCard = ({ asesor }: Props) => {
                     <p
                     className="text-center text-gray-500 text-base mt"
                     >
-                        { asesor.position }
+                        { asesor.position } - Punto Koreano
                     </p>
                 </section>
 

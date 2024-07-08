@@ -12,7 +12,7 @@ const CardProducts = ({ inline = false }: Props) => {
     const navigate = useNavigate();
 
     return (
-        <div data-aos="fade-up" className="transition duration-500 w-80 border rounded-lg relative cursor-pointer hover:border-[#E2060F] sm:w-64 md:w-72 xl:w-80">
+        <div data-aos="fade-up" className="hover:-translate-y-4 transition duration-500 w-80 border rounded-lg relative cursor-pointer hover:border-[#E2060F] sm:w-64 md:w-72 xl:w-80">
             <div>
                 {/* size of image is w-320px and h-320px smartphones */}
                 <div className="bg-[#E2060F] absolute py-3.5 px-2 rounded-full text-white right-4 top-4 z-1"> 20% </div>

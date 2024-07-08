@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import './styles.css';
 import { useMediaQuery } from 'react-responsive';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const Services = () => {
 
@@ -48,23 +50,29 @@ const Services = () => {
 
     return (
         <div className="container-services">
-            <div data-aos="fade-up" className="container-service">
+            <div className="container-service">
                 { services.map( (service, idx) => {
                     const [ isOpen, setIsOpen ] = useState<boolean>(false);
 
                     return (
                         <figure
                         key={`${idx}-service`}
-                        onClick={() => setIsOpen(!isOpen)}
-                        className={`service ${(isOpen && !isTable) && 'bg-white rounded-2xl pb-6 absolute z-10 left-0 top-0'}`}
+                        onClick={() => !isTable && setIsOpen(!isOpen)}
+                        onMouseLeave={() => setIsOpen(false)}
+                        className={`service cursor-pointer hover:-translate-y-4 ${(isOpen && !isTable) && 'bg-white rounded-2xl pb-6 absolute z-20 left-0 top-0'}`}
                         >
                             <img className='img' src={ service.icon } alt={ service.label } />
                             <figcaption>{ service.label }</figcaption>
+                            <FontAwesomeIcon icon={faChevronDown} className='text-xl' />
 
                             {
                                 (isOpen && !isTable) && (
-                                    <div>
-                                        { service.images.map (( image, idx ) => <img key={`${idx}-{brands}`} src={image} className='mb-2 w-28 mx-auto' />)}
+                                    <div
+                                    className='transition-all duration-300'
+                                    >
+                                        { service.images.map (( image, idx ) =>
+                                            <img key={`${idx}-{brands}`} src={image} className='mb-2 w-28 mx-auto' />
+                                        )}
                                     </div>
                                 )
                             }
