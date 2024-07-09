@@ -56,16 +56,19 @@ const Blog = () => {
                     <img src="https://puntokoreano.com/images/SSangYong_blue.png" alt="" width={100} />
                 </div>
             </section>
-            <section className="my-5 md:flex md:flex-wrap md:justify-between xl:justify-around">
+            <section className="my-5 md:flex md:flex-wrap md:justify-between md:gap-y-8 xl:justify-around">
                 {
                     brands.map((brand, idx) => {
                         return (
-                            <div
-                            key={`${idx}-${brand.name}`}
-                            className="border-4 border-yellow-400 bg-white flex justify-center cursor-pointer my-5 min-w-80 lg:min-w-[450px] 2xl:min-w-[45%]"
-                            onClick={() => navigate(`/blog/${brand.name}/vehicles`)}
-                            >
-                                <img src={brand.image} alt="" className="w-52 h-40 object-contain" />
+                            <div className="transition duration-300 hover:-translate-y-4 hover:shadow-2xl">
+                                <div
+                                data-aos={"fade-up"}
+                                key={`${idx}-${brand.name}`}
+                                className="border-4 border-yellow-400 bg-white my-8 flex justify-center cursor-pointer min-w-80 md:my-0 lg:min-w-[450px] 2xl:min-w-[45%]"
+                                onClick={() => navigate(`/blog/${brand.name}/vehicles`)}
+                                >
+                                    <img src={brand.image} alt="" className="w-52 h-40 object-contain" />
+                                </div>
                             </div>
                         )
                     })

@@ -53,7 +53,7 @@ const VehiclesBrand = () => {
                             onClick={() => navigate(`/blog/${vehicle.brand}/${vehicle.name}/articles`)}
                             >
                                 <figure className="border-b-2 border-[#001529]">
-                                    <img src={vehicle.image} alt={vehicle.name} className="hover:scale-105 transition-[transform] duration-300" />
+                                    <img src={vehicle.image} alt={vehicle.name} className="hover:scale-105 transition-[transform] duration-500" />
                                 </figure>
                                 <div>
                                     <h2 className="text-xl uppercase font-medium">{ vehicle.brand }</h2>

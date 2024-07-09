@@ -28,11 +28,15 @@ const SectionProducts = ({ inline }: Props) => {
             {
                 inline && (
                     <Swiper
+                        data-aos={inline && "fade-left"}
                         navigation
                         loop
                         modules={[ Navigation ]}
                         slidesPerView={xl3 ? 3 : xl2 ? 3 : xl ? 3 : lg ? 3 : md ? 2 : sm ? 2 : 1}
                         spaceBetween={20}
+                        style={{
+                            '--swiper-navigation-size': "30px",
+                        } as Record<string, any>}
                     >
                         <SwiperSlide>
                             <CardProducts inline />

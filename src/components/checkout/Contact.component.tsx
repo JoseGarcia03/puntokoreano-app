@@ -78,7 +78,7 @@ const Contact = ({ setStatus, setCurrent }: Props) => {
                     <button
                     onClick={() => navigate('/store')}
                     type="submit"
-                    className="flex items-center gap-2 text-[#5037f4] font-medium py-1 px-2 rounded-lg text-base"
+                    className="flex items-center gap-2 bg-blue-700 text-white font-medium py-1 px-2 rounded-lg text-base"
                     >
                         Seguir comprando
                     </button>

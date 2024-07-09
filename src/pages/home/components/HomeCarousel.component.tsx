@@ -21,6 +21,11 @@ export const HomeCarousel = () => {
                 delay: 2500,
                 disableOnInteraction: false,
             }}
+            style={{
+                '--swiper-pagination-top': '0px',
+                '--swiper-pagination-bullet-inactive-color': 'white',
+                '--swiper-pagination-bullet-inactive-opacity': '0.8'
+            } as Record<string, any>}
             className='h-64 sm:h-96 lg:h-[60vh] xl:h-[80vh]'
             >
                 <SwiperSlide>
