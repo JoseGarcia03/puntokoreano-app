@@ -16,7 +16,7 @@
             }
 
             .figcaption-logo {
-                @apply text-inherit whitespace-nowrap font-karate text-2xl;
+                @apply text-inherit whitespace-nowrap font-karate text-2xl text-secondary lg:text-white;
             }
         }
 

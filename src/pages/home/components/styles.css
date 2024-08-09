@@ -1,8 +1,8 @@
 .container-banner {
-    @apply bg-gradient-to-r from-secondary_1 to-secondary_2 max-w-[1280px] mx-auto relative xl:-top-12 z-10 lg:rounded-b-lg xl:rounded-lg;
+    @apply bg-gradient-to-r from-secondary_1 to-secondary_2 max-w-[1280px] mx-auto relative xl:-top-24 z-10 lg:rounded-b-lg xl:rounded-lg;
 
     .banner-content {
-        @apply  p-4 flex flex-col justify-center items-center lg:flex-row lg:px-10 lg:py-1 lg:justify-around;
+        @apply p-4 flex flex-col justify-center items-center lg:flex-row lg:px-10 lg:py-1 lg:justify-around;
 
         img {
             @apply w-20 xl:h-full lg:w-32 lg:mx-1;
@@ -20,18 +20,18 @@
             @apply py-4 lg:py-2;
 
             img {
-                @apply block mx-auto w-28 pb-3 lg:w-40;
+                @apply block mx-auto w-44 pb-3 lg:w-60;
             }
 
             figcaption {
-                @apply text-white font-noto_serif text-center;
+                @apply text-white font-glegoo text-center;
             }
         }
     }
 }
 
 .container-services {
-    @apply bg-gradient-to-b from-[#272930] via-white to-[#DFDFDF] lg:max-h-[350px] selection:w-full lg:-mt-44;
+    @apply bg-gradient-to-b from-[#272930] via-white to-[#DFDFDF] lg:max-h-[350px] selection:w-full lg:-mt-[12.8rem];
 
     .container-service {
         @apply max-w-[1280px] mx-auto w-full flex flex-col gap-8 py-8 lg:flex-row md:px-4 lg:pt-48 lg:px-8 xl:pt-36 xl:justify-around 2xl:pb-28;
@@ -80,4 +80,8 @@
             @apply font-glegoo w-fit lg:whitespace-nowrap text-base lg:text-xs xl:text-base;
         }
     }
+}
+
+.swiper-pagination {
+    height: fit-content;
 }

@@ -26,7 +26,7 @@ const VirtualCard = ({ asesor }: Props) => {
                 </div>
                 <section className="bg-[#E8E6E7] pb-10">
                     <img
-                    className="object-top object-cover w-56 h-56 rounded-full border-2 border-[#FB0704] -mt-28 relative z-10 mx-auto"
+                    className="object-top object-cover w-56 h-56 rounded-full border-2 border-secondary_1 -mt-28 relative z-10 mx-auto"
                     src={ asesor.image } alt="asesor"
                     />
                     <h3

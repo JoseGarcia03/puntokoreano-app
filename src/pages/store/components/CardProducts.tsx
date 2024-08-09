@@ -17,9 +17,13 @@ const CardProducts = ({ inline = false }: Props) => {
                 <div>
                     {/* size of image is w-320px and h-320px smartphones */}
                     <div className="bg-[#E2060F] absolute py-3.5 px-2 rounded-full text-white right-4 top-4 z-1"> 20% </div>
-                    <div className="h-80" onClick={() => navigate('/store/product/1')}>
+                    <div className="h-80">
                         {
-                            inline && <img src="https://risingtheme.com/html/demo-partsix/partsix/assets/img/product/main-product/product1.webp" alt="" className="rounded-lg w-full h-80 sm:w-64 sm:h-auto xl:w-80 object-scale-down" />
+                            inline &&
+                            <img
+                            onClick={() => navigate('/store/product/1')}
+                            src="https://risingtheme.com/html/demo-partsix/partsix/assets/img/product/main-product/product1.webp" alt="" className="rounded-lg w-full h-80 sm:w-64 sm:h-auto xl:w-80 object-scale-down"
+                            />
                         }
                         { !inline && <Swiper
                         navigation

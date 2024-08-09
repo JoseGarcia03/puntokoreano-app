@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { ParallaxBanner, ParallaxBannerLayer } from 'react-scroll-parallax';
 import ReactCardFlip from 'react-card-flip';
 import VirtualCard from '@/components/cards/VirtualCard.component';
 import { useMediaQuery } from 'react-responsive';
 import DigitalCardDesktop from '@/components/cards/DigitalCardDesktop';
+import { Parallax } from 'react-parallax';
 
 const About = () => {
 
@@ -36,40 +36,59 @@ const About = () => {
 
     return (
         <div>
-            <h1 className="text-2xl text-center font-bold py-4 mb-2 uppercase lg:text-4xl font-glegoo">¿Quienes somos?</h1>
-
-            <ParallaxBanner className="aspect-[2/1]">
-                <ParallaxBannerLayer expanded={false} speed={-20}>
-                    <img src="https://puntokoreano.com/images/carrousel/TIVOLI.jpg" alt="" className="object-top h-full brightness-[.6]" loading="lazy" />
-                </ParallaxBannerLayer>
-                <ParallaxBannerLayer speed={-15}>
-                    <div className="absolute -top-52 right-0 left-0 bottom-0 flex flex-col items-center justify-center px-10 max-w-[1320px] mx-auto">
-                        <h1 className="text-4xl text-white font-medium font-glegoo">Objeto Social</h1>
-                        <p className="text-xl text-white mt-10 text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti voluptatum laboriosam temporibus amet earum qui optio voluptates. Optio, similique. Vel incidunt possimus quibusdam laboriosam similique iste, labore amet minus quia!
-                        Magni labore similique asperiores? Obcaecati, natus neque dolorem ut tempora accusantium adipisci, minus odio harum nam aliquam repellendus. Modi nesciunt excepturi tempore facilis perspiciatis iusto, quisquam facere amet eligendi expedita!</p>
+            <div className='bg-gradient-to-r from-secondary_1 to-secondary_2 max-w-[1320px] mx-5 lg:mx-auto'>
+                <h2 className="text-2xl text-center text-white font-bold py-4 uppercase lg:text-4xl font-glegoo">¿Quienes somos?</h2>
+            </div>
+            <div className='relative h-fit lg:h-max'>
+                <Parallax
+                bgImage='https://puntokoreano.com/images/carrousel/TIVOLI.jpg'
+                strength={500}
+                bgImageStyle={{ objectFit: 'cover' }}
+                >
+                    <div className="flex flex-col items-center justify-center px-10 max-w-[1320px] mx-auto my-5 h-full lg:h-[500px] relative z-20">
+                        <h1 className="text-3xl text-white font-medium font-glegoo">Objeto Social</h1>
+                        <p className="text-xl text-white mt-10 text-center lg:max-w-3xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti voluptatum laboriosam temporibus amet earum qui optio voluptates. Optio, similique. Vel incidunt possimus quibusdam laboriosam similique iste, labore amet minus quia!</p>
                     </div>
-                </ParallaxBannerLayer>
-            </ParallaxBanner>
+                </Parallax>
+                <div className='absolute top-0 left-0 w-full h-full bg-[#0000008a] z-10'></div>
+            </div>
 
-
-            <div className='mb-10 max-w-[1320px] mx-auto px-10'>
-                <h2 data-aos="fade-up" className="text-xl text-center my-8 font-semibold uppercase font-glegoo lg:text-4xl">Nuestros asesores</h2>
+            <div className='max-w-[1320px] mx-auto px-5'>
+                <div className='bg-gradient-to-r from-secondary_1 to-secondary_2 max-w-[1280px] mx-auto'>
+                    <h2 className="text-2xl text-center text-white font-bold py-4 uppercase lg:text-4xl font-glegoo my-5">Nuestros asesores</h2>
+                </div>
                 <div data-aos="fade-up" className="lg:flex lg:flex-wrap lg:justify-around">
                     {
                         consultants.map((asesor, idx) => {
-                            const [ open, setOpen ] = useState(false);
+
+                            const [ isFlipped, setIsFlipped ] = useState(false);
+                            const [ canFlip, setCanFlip ] = useState(true);
+
+                            const handleMouseEnter = () => {
+                                if (canFlip) {
+                                    setIsFlipped( !isFlipped );
+                                    setCanFlip(false)
+                                }
+                            }
+
+                            const handleMouseLeave = () => {
+                                setCanFlip(true);
+                            }
 
                             return (
-                                <ReactCardFlip isFlipped={open}>
+                                <ReactCardFlip isFlipped={isFlipped}>
                                     <div
                                     key={`${idx}-${asesor.name}`}
-                                    onMouseEnter={() => setOpen(true)}
+                                    onMouseEnter={handleMouseEnter}
+                                    onMouseLeave={handleMouseLeave}
+                                    onTouchStart={handleMouseEnter}
+                                    onTouchEnd={handleMouseLeave}
                                     className='relative w-80 border-4 border-[#5c4dce] p-1 rounded-2xl shadow-2xl mx-auto mb-10'
                                     >
                                         <img src={ asesor.image } alt={ asesor.name } className='rounded-2xl h-[551px] object-cover' />
 
                                         { !isDesktop && <button
-                                        onClick={() => setOpen(true)}
+                                        onClick={handleMouseEnter}
                                         className='absolute top-4 right-4 bg-[#E2000E] text-white px-4 py-2 rounded-xl shadow-2xl hover:bg-[#001529] transition-all duration-300 uppercase'
                                         >
                                             Presiona aquí
@@ -83,9 +102,10 @@ const About = () => {
 
                                     <div
                                     key={`${idx}-${asesor.name}`}
-                                    onMouseLeave={() => setOpen(false)}
-                                    onTouchMove={() => setOpen(false)}
-                                    onTouchEnd={() => setOpen(false)}
+                                    onMouseEnter={handleMouseEnter}
+                                    onMouseLeave={handleMouseLeave}
+                                    onTouchStart={handleMouseEnter}
+                                    onTouchEnd={handleMouseLeave}
                                     className='relative w-80 border-4 border-[#5c4dce] p-1 rounded-2xl shadow-2xl mx-auto mb-10'
                                     >
                                         {
@@ -100,7 +120,9 @@ const About = () => {
             </div>
 
             <div data-aos="fade-up" className='max-w-[1320px] mx-auto px-5 lg:px-10 mb-20'>
-                <h2 data-aos="fade-up" className="text-xl text-center my-10 font-semibold uppercase font-glegoo lg:text-4xl">Donde nos ubicamos</h2>
+                <div className='bg-gradient-to-r from-secondary_1 to-secondary_2 max-w-[1280px] mx-auto'>
+                    <h2 className="text-2xl text-center text-white font-bold py-4 uppercase lg:text-4xl font-glegoo my-5">Donde nos ubicamos</h2>
+                </div>
                 <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d591.1331551163539!2d-74.07226717546645!3d4.655642602154403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a4dea43cd65%3A0x8c8013ea1b146459!2sPUNTO%20KOREANO%20S.A.S!5e0!3m2!1ses-419!2sco!4v1720207300180!5m2!1ses-419!2sco"
                 width="100%"

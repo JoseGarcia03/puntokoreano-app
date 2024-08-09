@@ -60,11 +60,11 @@ const Blog = () => {
                 {
                     brands.map((brand, idx) => {
                         return (
-                            <div className="transition duration-300 hover:-translate-y-4 hover:shadow-2xl">
+                            <div className="transition duration-300 hover:-translate-y-4 hover:shadow-2xl cursor-pointer my-8 min-w-80 md:my-0 lg:min-w-[450px] 2xl:min-w-[45%]">
                                 <div
                                 data-aos={"fade-up"}
                                 key={`${idx}-${brand.name}`}
-                                className="border-4 border-yellow-400 bg-white my-8 flex justify-center cursor-pointer min-w-80 md:my-0 lg:min-w-[450px] 2xl:min-w-[45%]"
+                                className="border-4 border-yellow-400 bg-white flex justify-center"
                                 onClick={() => navigate(`/blog/${brand.name}/vehicles`)}
                                 >
                                     <img src={brand.image} alt="" className="w-52 h-40 object-contain" />

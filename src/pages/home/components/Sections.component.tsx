@@ -27,7 +27,7 @@ const Sections = () => {
             <div data-aos="fade-up" className={`container-main-sections`}>
                 <div
                 onClick={() => navigate('/store/search')}
-                className={`flex flex-col-reverse gap-4  mt-8 md:flex-row lg:justify-between border-2 border-solid border-[#5c4dce] p-4 rounded-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-200 cursor-pointer`}
+                className={`flex flex-col-reverse gap-4  mt-8 md:-skew-x-12 md:flex-row lg:justify-between border-2 border-solid border-[#5c4dce] p-4 rounded-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-200 cursor-pointer`}
                 >
 
                     <div className={`md:flex-1 flex flex-col justify-between`}>
@@ -38,14 +38,14 @@ const Sections = () => {
                         </p>
                         <Button danger size={isBigger ? "large": "middle"} className={`rounded-full mx-auto block mt-4 w-fit uppercase md:mx-0 2xl:text-xl`} > Click here </Button>
                     </div>
-                    <div className={`h-36 w-72 mx-auto -skew-y-12 rotate-12 md:mr-4 lg:w-[26rem] lg:h-60 lg:mr-8 xl:w-[34rem] 2xl:h-80 2xl:w-[40rem] 2xl:mr-12`}>
+                    <div className={`h-36 w-72 mx-auto md:mr-4 lg:w-[26rem] lg:h-60 lg:mr-8 xl:w-[34rem] 2xl:h-80 2xl:w-[40rem] 2xl:mr-12`}>
                         <img src="https://puntokoreano.com/images/carrousel/KORANDO.jpg" alt="" className="brightness-[.4] w-full h-full object-cover" />
                     </div>
                 </div>
 
                 <div
                 onClick={() => navigate('/about')}
-                className={`flex flex-col-reverse gap-4 mt-8 md:flex-row lg:justify-between border-2 border-solid border-[#5c4dce] p-4 rounded-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-200 cursor-pointer`}>
+                className={`flex flex-col-reverse gap-4 mt-8 md:-skew-x-12 md:flex-row lg:justify-between border-2 border-solid border-[#5c4dce] p-4 rounded-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-200 cursor-pointer`}>
                     <div className={`md:flex-1 flex flex-col justify-between`}>
                         <h2 className={`text-2xl tracking-wide text-center uppercase md:text-justify 2xl:text-3xl font-glegoo`}>¿Quienes somos?</h2>
                         <p className={`text-center md:text-justify md:w-80 lg:w-96 2xl:text-xl font-exo`}>
@@ -54,14 +54,14 @@ const Sections = () => {
                         </p>
                         <Button onClick={() => navigate('/about')} danger size={isBigger ? "large": "middle"} className={`rounded-full mx-auto block mt-4 uppercase w-fit md:mx-0 2xl:text-xl`} > Click here </Button>
                     </div>
-                    <div className={`h-36 w-72 bg-gray-500 mx-auto -skew-y-12 rotate-12 md:mr-4 lg:w-[26rem] lg:h-60 lg:mr-8 xl:w-[34rem] 2xl:h-80 2xl:w-[40rem] 2xl:mr-12`}>
+                    <div className={`h-36 w-72 bg-gray-500 mx-auto md:mr-4 lg:w-[26rem] lg:h-60 lg:mr-8 xl:w-[34rem] 2xl:h-80 2xl:w-[40rem] 2xl:mr-12`}>
                         <img src="https://puntokoreano.com/images/carrousel/REXTON.webp" alt="" className="brightness-[.4] w-full h-full object-cover" />
                     </div>
                 </div>
 
                 <div
                 onClick={() => navigate('blog')}
-                className={`flex flex-col-reverse gap-4 mt-8 md:flex-row border-2 border-solid border-[#5c4dce] p-4 rounded-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-200 cursor-pointer`}>
+                className={`flex flex-col-reverse gap-4 mt-8 md:-skew-x-12 md:flex-row border-2 border-solid border-[#5c4dce] p-4 rounded-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-200 cursor-pointer`}>
                     <div className={`md:flex-1 flex flex-col justify-between`}>
                         <h2 className={`text-2xl tracking-wide text-center uppercase md:text-justify 2xl:text-3xl font-glegoo`}>Blog Interactivo</h2>
                         <p className={`text-center md:text-justify md:w-80 lg:w-96 2xl:text-xl font-exo`}>
@@ -69,7 +69,7 @@ const Sections = () => {
                         </p>
                         <Button danger size={isBigger ? "large": "middle"} className={`rounded-full mx-auto block mt-4 uppercase w-fit md:mx-0 2xl:text-xl`} > Click here </Button>
                     </div>
-                    <div className={`h-36 w-72 bg-gray-500 mx-auto -skew-y-12 rotate-12 md:mr-4 lg:w-[26rem] lg:h-60 lg:mr-8 xl:w-[34rem] 2xl:h-80 2xl:w-[40rem] 2xl:mr-12`}>
+                    <div className={`h-36 w-72 bg-gray-500 mx-auto md:mr-4 lg:w-[26rem] lg:h-60 lg:mr-8 xl:w-[34rem] 2xl:h-80 2xl:w-[40rem] 2xl:mr-12`}>
                         <img src="https://puntokoreano.com/images/carrousel/TORRES.jpg" alt="" className="brightness-[.4] w-full h-full object-cover" />
                     </div>
                 </div>

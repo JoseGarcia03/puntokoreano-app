@@ -26,7 +26,6 @@ import { useEffect } from "react";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { ParallaxProvider } from "react-scroll-parallax";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -112,9 +111,7 @@ const Routes = () => {
             }}
         >
             <QueryClientProvider client={queryClient}>
-                <ParallaxProvider>
                     <RouterProvider router={router} />
-                </ParallaxProvider>
             </QueryClientProvider>
         </ConfigProvider>
     );

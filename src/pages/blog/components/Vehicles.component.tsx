@@ -1,6 +1,10 @@
 import { useNavigate } from "react-router-dom";
 
-const VehiclesBrand = () => {
+interface Props {
+    applies?: boolean;
+}
+
+const VehiclesBrand = ({ applies = false }: Props) => {
     const navigate = useNavigate();
 
     const vehicles = [
@@ -37,23 +41,23 @@ const VehiclesBrand = () => {
     ]
     return (
         <section className="mx-5 my-5 max-w-[1280px] xl:mx-auto">
-            <h1
+            { !applies && <h1
             className="text-xl font-bold underline decoration-[#FFEC0C] uppercase text-center underline-offset-4 sm:text-2xl xl:text-3xl"
             >
                 Selecciona el modelo de tu vehículo
-            </h1>
-            <div className="md:flex md:flex-wrap 2xl:justify-around">
+            </h1>}
+            <div className="md:flex md:flex-wrap 2xl:justify-around justify-center">
                 {
                     vehicles.map((vehicle, idx) => {
                         return (
                             <div
                             data-aos="fade-up"
                             key={`${idx}-${vehicle.name}`}
-                            className="my-2 w-80 mx-auto cursor-pointer sm:my-4 lg:w-[35%] max-w-[500px]"
+                            className={`my-2 ${ applies ? 'w-72' : 'w-80'} mx-auto cursor-pointer sm:my-4 lg:w-[35%] max-w-[500px]`}
                             onClick={() => navigate(`/blog/${vehicle.brand}/${vehicle.name}/articles`)}
                             >
                                 <figure className="border-b-2 border-[#001529]">
-                                    <img src={vehicle.image} alt={vehicle.name} className="hover:scale-105 transition-[transform] duration-500" />
+                                    <img src={vehicle.image} alt={vehicle.name} className={`${ !applies && "hover:scale-105 transition-[transform] duration-500"}`} />
                                 </figure>
                                 <div>
                                     <h2 className="text-xl uppercase font-medium">{ vehicle.brand }</h2>

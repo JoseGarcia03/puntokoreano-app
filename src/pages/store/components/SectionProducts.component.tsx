@@ -20,7 +20,7 @@ const SectionProducts = ({ inline }: Props) => {
     const xl3 = useMediaQuery({ query: '(min-width: 1800px)' });
 
     return (
-        <div className="mx-5 mb-10 max-w-[1320px] lg:px-10 xl:mx-auto lg:mx-auto">
+        <div className={`mx-5 mb-10 max-w-[1280px] lg:px-0 xl:mx-auto lg:mx-auto`}>
             <div className="flex items-center gap-2 mt-2 py-2 border-b border-b-[#e5e5e5] mb-5">
                 <FontAwesomeIcon icon={faCircle} className="text-[#E2060F] text-sm p-1 border rounded-full border-[#E2060F]" />
                 <h2 className="text-xl uppercase lg:text-2xl"><strong>Productos</strong> populares</h2>

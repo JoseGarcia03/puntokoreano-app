@@ -9,6 +9,8 @@ import ReviewsProduct from "./components/Reviews.component";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import SectionProducts from "../store/components/SectionProducts.component";
+import ArticuleRelation from "./components/ArticulesRelation.component";
+import Applies from "./components/Applies.component";
 
 const ProductDetail = () => {
     const navigate = useNavigate();
@@ -25,6 +27,16 @@ const ProductDetail = () => {
             key: '2',
             label: 'Calificaciones',
             children: <ReviewsProduct />
+        },
+        {
+            key: '3',
+            label: 'Artículos relacionados',
+            children: <ArticuleRelation />
+        },
+        {
+            key: '4',
+            label: 'Aplicaciones',
+            children: <Applies />
         }
     ]
 

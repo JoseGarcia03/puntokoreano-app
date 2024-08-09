@@ -18,7 +18,7 @@ const Banner = () => {
                 <h2>Distribuidor</h2>
 
                 <figure className='container-brand'>
-                    <img src="https://puntokoreano.com/images/logos/ssangyong.png" alt="Logo Ssangyong" />
+                    <img src="https://puntokoreano.com/images/logos/ssangyoung_white.png" alt="Logo Ssangyong" />
                     <figcaption>
                         Originalidad, sinceridad y respaldo
                     </figcaption>

@@ -1,10 +1,11 @@
 import { faChevronRight, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useQuery } from "@tanstack/react-query";
+// import { useQuery } from "@tanstack/react-query";
 import { Drawer } from "antd";
-import axios from "axios";
+// import axios from "axios";
 import { useState } from "react";
 import SubgroupModal from "./Subgroups.component";
+import groupsData from '../../assets/puntokoreano_db.groups_collection.json';
 
 interface Props {
     open: boolean;
@@ -23,15 +24,15 @@ type subgroups = {
 }
 
 const GroupsModal = ({ open, setOpen }: Props) => {
-    const { data } = useQuery({
-        queryKey: ['groups'],
-        queryFn: () => {
-            return axios.get(`${import.meta.env.VITE_API_REST_URL}/api/groups`)
-            .then((resp) => {
-                return resp.data
-            });
-        },
-    });
+    // const { data } = useQuery({
+    //     queryKey: ['groups'],
+    //     queryFn: () => {
+    //         return axios.get(`${import.meta.env.VITE_API_REST_URL}/api/groups`)
+    //         .then((resp) => {
+    //             return resp.data
+    //         });
+    //     },
+    // });
 
     const [ hoveredCategory, setHoveredCategory ] = useState<null | group >(null);
     const [ openSubgroup, setOpenSubgroup ] = useState<boolean>(false);
@@ -52,7 +53,7 @@ const GroupsModal = ({ open, setOpen }: Props) => {
         extra={<FontAwesomeIcon icon={faXmark} className="text-2xl" onClick={() => setOpen(false)} />}
         >
             {
-                data?.groups?.map((group: group, idx: number ) => (
+                groupsData?.map((group: group, idx: number ) => (
                     <div
                     key={`${idx}-${group.name}`}
                     className="flex items-center justify-between py-3"
